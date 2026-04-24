@@ -20,19 +20,23 @@ export function Contact() {
 
         <div className="mt-16 grid lg:grid-cols-5 gap-6">
           <div className="lg:col-span-2 glass rounded-3xl p-7 space-y-6">
+            <div className="relative h-48 w-full rounded-2xl overflow-hidden mb-4 bg-gradient-to-br from-primary/10 to-accent/10">
+              <img 
+                src="/contact-img.png" 
+                alt="Contact Us" 
+                className="w-full h-full object-cover opacity-80"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = 'none';
+                }}
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-accent/40 text-4xl">✨</div>
+              </div>
+            </div>
             <ContactItem icon={Mail} label="Email" value="hello@velantrio.com" />
-            <ContactItem icon={Phone} label="Phone" value="+91 98765 43210" />
+            <ContactItem icon={Phone} label="Phone" value="+91 89300 71652" />
             <ContactItem icon={MapPin} label="Office" value="Bengaluru · Mumbai · Remote-first" />
-
-            <a
-              href="https://wa.me/919876543210"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-3 rounded-2xl bg-gradient-to-r from-[oklch(0.75_0.18_150)] to-[oklch(0.65_0.18_160)] text-background px-5 py-3.5 font-medium hover:scale-[1.02] transition-transform shadow-[var(--shadow-card)]"
-            >
-              <MessageCircle className="h-5 w-5" />
-              Chat on WhatsApp
-            </a>
+            
 
             <div className="pt-4 border-t border-white/10">
               <div className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Hours</div>
