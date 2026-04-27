@@ -33,7 +33,7 @@ export function Hero() {
       <div className="absolute bottom-10 right-10 h-96 w-96 rounded-full bg-accent/20 blur-3xl animate-float-slow" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-        <div className="animate-fade-up">
+        <div>
           <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs text-muted-foreground mb-6">
             <span className="h-2 w-2 rounded-full bg-accent animate-glow-pulse" />
             Trusted by global enterprises & startups

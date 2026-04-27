@@ -1,13 +1,16 @@
+import dynamic from "next/dynamic";
 import { Header } from "./Components/Header";
 import { Hero } from "./Components/Hero";
-import { Services } from "./Components/Services";
-import { About } from "./Components/About";
-import { WhyUs } from "./Components/WhyUs";
-import { Process } from "./Components/Process";
-import { Industries } from "./Components/Industries";
-import { Testimonials } from "./Components/Testimonials";
-import { Contact } from "./Components/Contact";
-import { Footer } from "./Components/Footer";
+
+// Dynamic imports for below-the-fold components
+const Services = dynamic(() => import("./Components/Services").then(mod => mod.Services));
+const About = dynamic(() => import("./Components/About").then(mod => mod.About));
+const WhyUs = dynamic(() => import("./Components/WhyUs").then(mod => mod.WhyUs));
+const Process = dynamic(() => import("./Components/Process").then(mod => mod.Process));
+const Industries = dynamic(() => import("./Components/Industries").then(mod => mod.Industries));
+const Testimonials = dynamic(() => import("./Components/Testimonials").then(mod => mod.Testimonials));
+const Contact = dynamic(() => import("./Components/Contact").then(mod => mod.Contact));
+const Footer = dynamic(() => import("./Components/Footer").then(mod => mod.Footer));
 
 export default function Home() {
   return (
