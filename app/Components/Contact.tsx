@@ -33,9 +33,9 @@ export function Contact() {
                 <div className="text-accent/40 text-4xl">✨</div>
               </div>
             </div>
-            <ContactItem icon={Mail} label="Email" value="hello@velantrio.com" />
-            <ContactItem icon={Phone} label="Phone" value="+91 89300 71652" />
-            <ContactItem icon={MapPin} label="Office" value="Bengaluru · Mumbai · Remote-first" />
+            <ContactItem icon={Mail} label="Email" value="info@velantrio.com" />
+            <ContactItem icon={Phone} label="Phone" value="+91 8930071652" />
+            <ContactItem icon={MapPin} label="Office" value="Mohali, Punjab, India" />
             
 
             <div className="pt-4 border-t border-white/10">
