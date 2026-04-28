@@ -93,6 +93,19 @@ export function About() {
           ))}
         </div>
       </div>
+      <section id="founder" className="mt-16 glass rounded-3xl px-10 p-8">
+        <h2 className="text-3xl font-bold text-gradient mb-4">Founder</h2>
+        <div className="flex items-center gap-6">
+          <div className="h-24 w-24 rounded-full bg-primary/30 flex items-center justify-center text-2xl font-bold text-primary-foreground">
+            AS
+          </div>
+          <div>
+            <p className="font-semibold">Ankit Sharma</p>
+            <p className="text-sm text-muted-foreground">Founder &amp; CEO</p>
+            <p className="mt-2 text-muted-foreground">Ankit Sharma founded Velantrio in 2026 with a vision to deliver high‑performance outsourcing solutions powered by cutting‑edge technology and a focus on accuracy and speed.</p>
+          </div>
+        </div>
+      </section>
     </section>
   );
 }

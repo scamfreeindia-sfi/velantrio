@@ -25,23 +25,67 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+import StructuredData from "./Components/StructuredData";
+
 export const metadata: Metadata = {
-  title: "Velantrio | Smart Outsourcing Solutions (BPO, KPO, Data Validation)",
+  metadataBase: new URL("https://velantrio.com"),
+  title: {
+    default: "Velantrio | Smart Outsourcing Solutions (BPO, KPO, Data Validation)",
+    template: "%s | Velantrio"
+  },
   description: "Velantrio provides high-performance outsourcing solutions including Tele Data Validation, BPO, KPO, and Back Office Support. Engineered for accuracy, speed, and scale.",
-  keywords: ["Outsourcing", "BPO", "KPO", "Data Validation", "Back Office Support", "Business Process Outsourcing", "Velantrio"],
+  keywords: [
+    "Outsourcing",
+    "BPO",
+    "KPO",
+    "Data Validation",
+    "Back Office Support",
+    "Business Process Outsourcing",
+    "Velantrio",
+    "Tele Data Validation",
+    "Lead Generation",
+    "Data Enrichment",
+    "Customer Support Outsourcing",
+    "India BPO"
+  ],
   authors: [{ name: "Velantrio Team" }],
+  creator: "Velantrio",
+  publisher: "Velantrio",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Velantrio | Smart Outsourcing Solutions",
-    description: "High-performance BPO and KPO solutions for growing businesses.",
+    description: "High-performance BPO and KPO solutions for growing businesses. Accuracy, speed, and scale.",
     url: "https://velantrio.com",
     siteName: "Velantrio",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Velantrio | Smart Outsourcing Solutions",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Velantrio | Smart Outsourcing Solutions",
     description: "High-performance BPO and KPO solutions for growing businesses.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -55,7 +99,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <StructuredData />
+        {children}
+      </body>
     </html>
   );
 }

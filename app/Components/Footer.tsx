@@ -43,8 +43,18 @@ export function Footer() {
               back office support — engineered for scale.
             </p>
             <div className="mt-5 flex gap-3">
-              {[LinkedinIcon, TwitterIcon, FacebookIcon, InstagramIcon].map((Icon, i) => (
-                <a key={i} href="#" className="h-9 w-9 rounded-lg glass flex items-center justify-center hover:border-accent/40 hover:text-accent transition-colors">
+              {[
+                { Icon: LinkedinIcon, label: "LinkedIn" },
+                { Icon: TwitterIcon, label: "Twitter" },
+                { Icon: FacebookIcon, label: "Facebook" },
+                { Icon: InstagramIcon, label: "Instagram" }
+              ].map(({ Icon, label }, i) => (
+                <a 
+                  key={i} 
+                  href="#" 
+                  aria-label={label}
+                  className="h-9 w-9 rounded-lg glass flex items-center justify-center hover:border-accent/40 hover:text-accent transition-colors"
+                >
                   <Icon className="h-4 w-4" />
                 </a>
               ))}

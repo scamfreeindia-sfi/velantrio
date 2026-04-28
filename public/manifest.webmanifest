@@ -1,0 +1,16 @@
+{
+  "name": "Velantrio | Smart Outsourcing Solutions",
+  "short_name": "Velantrio",
+  "description": "High-performance BPO and KPO solutions for growing businesses.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
