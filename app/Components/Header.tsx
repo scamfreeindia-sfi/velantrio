@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
+import Image from "next/image";
 
 const links = [
   { href: "#services", label: "Services" },
@@ -40,7 +41,13 @@ export function Header() {
           {/* Logo */}
           <Link href="#" className="flex items-center gap-2 group">
             <div className="relative h-9 w-9 rounded-xl bg-gradient-to-br from-accent via-primary to-deep-blue shadow-[var(--shadow-glow)] flex items-center justify-center">
-              <span className="font-bold text-background text-lg">V</span>
+              <Image
+                src="/logo.png"
+                alt="Velantrio"
+                width={32}
+                height={32}
+                className="rounded-xl"
+              />
               <div className="absolute inset-0 rounded-xl ring-1 ring-white/20" />
             </div>
             <span className="font-semibold tracking-tight text-foreground">
