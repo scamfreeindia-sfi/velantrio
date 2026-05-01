@@ -63,6 +63,37 @@ export default function StructuredData() {
     }
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What outsourcing services does Velantrio provide?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Velantrio provides high-performance outsourcing solutions including Tele Data Validation, BPO, KPO, Back Office Support, and Lead Generation engineered for accuracy and scale."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Tele Data Validation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tele Data Validation is a process where we verify and enrich your customer or lead data through tele-verification, ensuring high accuracy and conversion rates for your sales teams."
+      }
+      },
+      {
+        "@type": "Question",
+        "name": "How can BPO and KPO services help my business grow?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "By outsourcing non-core processes like data management, customer support, and knowledge-based tasks to Velantrio, businesses can focus on core growth while reducing operational costs and increasing efficiency."
+        }
+      }
+    ]
+  };
+
   return (
     <>
       <script
@@ -72,6 +103,10 @@ export default function StructuredData() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
     </>
   );

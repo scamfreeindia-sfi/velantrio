@@ -30,33 +30,33 @@ import StructuredData from "./Components/StructuredData";
 export const metadata: Metadata = {
   metadataBase: new URL("https://velantrio.com"),
   title: {
-    default: "Velantrio | Smart Outsourcing Solutions (BPO, KPO, Data Validation)",
-    template: "%s | Velantrio"
+    default: "Velantrio | Expert BPO, KPO & Tele Data Validation Services",
+    template: "%s | Velantrio Outsourcing"
   },
-  description: "Velantrio provides high-performance outsourcing solutions including Tele Data Validation, BPO, KPO, and Back Office Support. Engineered for accuracy, speed, and scale.",
+  description: "Velantrio is a premium outsourcing partner providing high-accuracy Tele Data Validation, BPO, KPO, and Back Office Support globally. Scale your business with our data-driven solutions.",
   keywords: [
-    "Outsourcing",
-    "BPO",
-    "KPO",
-    "Data Validation",
-    "Back Office Support",
-    "Business Process Outsourcing",
-    "Velantrio",
-    "Tele Data Validation",
-    "Lead Generation",
-    "Data Enrichment",
-    "Customer Support Outsourcing",
-    "India BPO"
+    "Business Process Outsourcing India",
+    "Knowledge Process Outsourcing",
+    "Tele Data Validation experts",
+    "Back Office Support services",
+    "Lead Generation solutions",
+    "Data Enrichment services",
+    "Velantrio Outsourcing",
+    "Global BPO partner",
+    "Data Validation for sales",
+    "Cost-effective outsourcing",
+    "Enterprise data solutions",
+    "Outsourced customer support"
   ],
-  authors: [{ name: "Velantrio Team" }],
+  authors: [{ name: "Velantrio" }],
   creator: "Velantrio",
   publisher: "Velantrio",
   alternates: {
-    canonical: "/",
+    canonical: "https://velantrio.com",
   },
   openGraph: {
-    title: "Velantrio | Smart Outsourcing Solutions",
-    description: "High-performance BPO and KPO solutions for growing businesses. Accuracy, speed, and scale.",
+    title: "Velantrio | Smart Outsourcing & Data Validation Solutions",
+    description: "High-performance BPO and KPO solutions. Engineered for accuracy, speed, and global scale.",
     url: "https://velantrio.com",
     siteName: "Velantrio",
     locale: "en_US",
@@ -72,8 +72,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Velantrio | Smart Outsourcing Solutions",
-    description: "High-performance BPO and KPO solutions for growing businesses.",
+    title: "Velantrio | Global Outsourcing & Data Validation",
+    description: "Scale your business with high-performance BPO and KPO solutions.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -87,6 +87,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "your-google-verification-code", // Replace when available
+    // bing: "your-bing-verification-code", // Replace when available
+  }
 };
 
 export default function RootLayout({

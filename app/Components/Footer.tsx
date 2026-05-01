@@ -61,16 +61,34 @@ export function Footer() {
             </div>
           </div>
 
-          <FooterCol title="Services" links={["Tele Data Validation", "Voice Process", "Non-Voice Support", "KPO Services", "Loan Processing"]} />
-          <FooterCol title="Company" links={["About", "Industries", "Process", "Contact", "Careers"]} />
+          <FooterCol 
+            title="Services" 
+            links={[
+              { name: "Tele Data Validation", href: "#services" },
+              { name: "Voice Process", href: "#services" },
+              { name: "Non-Voice Support", href: "#services" },
+              { name: "KPO Services", href: "#services" },
+              { name: "Loan Processing", href: "#services" }
+            ]} 
+          />
+          <FooterCol 
+            title="Company" 
+            links={[
+              { name: "About", href: "#about" },
+              { name: "Industries", href: "#industries" },
+              { name: "Process", href: "#process" },
+              { name: "Contact", href: "#contact" },
+              { name: "Careers", href: "#contact" }
+            ]} 
+          />
         </div>
 
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-muted-foreground">
           <div>© {new Date().getFullYear()} Velantrio Group. All rights reserved.</div>
           <div className="flex gap-5">
-            <a href="#" className="hover:text-foreground">Privacy</a>
-            <a href="#" className="hover:text-foreground">Terms</a>
-            <a href="#" className="hover:text-foreground">Security</a>
+            <a href="#contact" className="hover:text-foreground">Privacy</a>
+            <a href="#contact" className="hover:text-foreground">Terms</a>
+            <a href="#contact" className="hover:text-foreground">Security</a>
           </div>
         </div>
       </div>
@@ -78,14 +96,14 @@ export function Footer() {
   );
 }
 
-function FooterCol({ title, links }: { title: string; links: string[] }) {
+function FooterCol({ title, links }: { title: string; links: { name: string; href: string }[] }) {
   return (
     <div>
       <div className="text-sm font-semibold mb-4">{title}</div>
       <ul className="space-y-2.5 text-sm text-muted-foreground">
         {links.map((l) => (
-          <li key={l}>
-            <a href="#" className="hover:text-accent transition-colors">{l}</a>
+          <li key={l.name}>
+            <a href={l.href} className="hover:text-accent transition-colors">{l.name}</a>
           </li>
         ))}
       </ul>
