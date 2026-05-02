@@ -20,9 +20,9 @@ const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-const TwitterIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
   </svg>
 );
 
@@ -36,7 +36,14 @@ export function Footer() {
               <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-accent via-primary to-deep-blue flex items-center justify-center">
                 <span className="font-bold text-background">V</span>
               </div>
-              <span className="font-semibold">Velantrio<span className="text-accent">.</span></span>
+              <div className="flex flex-col leading-tight">
+                <span className="font-bold text-lg tracking-tight">
+                  Velantrio
+                </span>
+                <span className="text-[10px] text-accent/80 font-semibold uppercase tracking-widest -mt-0.5">
+                  Private Limited
+                </span>
+              </div>
             </div>
             <p className="mt-4 text-sm text-muted-foreground max-w-sm leading-relaxed">
               Smart outsourcing solutions for growing businesses. BPO, KPO, and
@@ -44,14 +51,16 @@ export function Footer() {
             </p>
             <div className="mt-5 flex gap-3">
               {[
-                { Icon: LinkedinIcon, label: "LinkedIn" },
-                { Icon: TwitterIcon, label: "Twitter" },
-                { Icon: FacebookIcon, label: "Facebook" },
-                { Icon: InstagramIcon, label: "Instagram" }
-              ].map(({ Icon, label }, i) => (
+                { Icon: LinkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/in/pardeep-singh-343b02406" },
+                { Icon: XIcon, label: "X", href: "https://x.com/Pardeepsin68085" },
+                { Icon: FacebookIcon, label: "Facebook", href: "#" },
+                { Icon: InstagramIcon, label: "Instagram", href: "#" }
+              ].map(({ Icon, label, href }, i) => (
                 <a 
                   key={i} 
-                  href="#" 
+                  href={href} 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="h-9 w-9 rounded-lg glass flex items-center justify-center hover:border-accent/40 hover:text-accent transition-colors"
                 >

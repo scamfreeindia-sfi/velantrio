@@ -50,9 +50,14 @@ export function Header() {
               />
               <div className="absolute inset-0 rounded-xl ring-1 ring-white/20" />
             </div>
-            <span className="font-semibold tracking-tight text-foreground">
-              Velantrio<span className="text-accent">.</span>
-            </span>
+            <div className="flex flex-col leading-tight">
+              <span className="font-bold tracking-tight text-foreground">
+                Velantrio
+              </span>
+              <span className="text-[10px] text-accent/80 font-semibold uppercase tracking-widest -mt-0.5">
+                Private Limited
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Links */}
