@@ -89,7 +89,11 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "your-google-verification-code", // Replace when available
-    // bing: "your-bing-verification-code", // Replace when available
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/logo.png",
   }
 };
 
