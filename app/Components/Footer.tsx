@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
@@ -28,13 +31,21 @@ const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/10 mt-10">
+    <footer className="relative border-t border-white/10 mt-20 bg-black/20">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5 pointer-events-none" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
         <div className="grid md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2">
-              <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-accent via-primary to-deep-blue flex items-center justify-center">
-                <span className="font-bold text-background">V</span>
+            <div className="flex items-center gap-3">
+              <div className="relative h-9 w-9 rounded-xl bg-gradient-to-br from-accent via-primary to-deep-blue shadow-[var(--shadow-glow)] flex items-center justify-center">
+                <Image
+                  src="/logo.png"
+                  alt="Velantrio"
+                  width={32}
+                  height={32}
+                  className="rounded-xl"
+                />
+                <div className="absolute inset-0 rounded-xl ring-1 ring-white/20" />
               </div>
               <div className="flex flex-col leading-tight">
                 <span className="font-bold text-lg tracking-tight">
@@ -84,7 +95,7 @@ export function Footer() {
             title="Company" 
             links={[
               { name: "About", href: "/about" },
-              { name: "Industries", href: "/#industries" },
+              { name: "Industries", href: "/industries" },
               { name: "Process", href: "/#process" },
               { name: "Contact", href: "/contact" },
               { name: "Careers", href: "/contact" }
@@ -92,12 +103,12 @@ export function Footer() {
           />
         </div>
 
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-muted-foreground">
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
           <div>© {new Date().getFullYear()} Velantrio Group. All rights reserved.</div>
           <div className="flex gap-5">
-            <a href="/contact" className="hover:text-foreground">Privacy</a>
-            <a href="/contact" className="hover:text-foreground">Terms</a>
-            <a href="/contact" className="hover:text-foreground">Security</a>
+            <Link href="/privacy" className="hover:text-foreground">Privacy</Link>
+            <Link href="/terms" className="hover:text-foreground">Terms</Link>
+            <Link href="/security" className="hover:text-foreground">Security</Link>
           </div>
         </div>
       </div>
