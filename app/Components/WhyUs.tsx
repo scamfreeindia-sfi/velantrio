@@ -1,5 +1,5 @@
 import { Target, Zap, DollarSign, Users, ShieldCheck, Globe2 } from "lucide-react";
-import { SectionHeader } from "./Services";
+import { SectionHeader } from "./SectionHeader";
 
 const features = [
   { icon: Target, title: "High Accuracy", desc: "Multi-stage QC ensures 99%+ accuracy across deliverables." },

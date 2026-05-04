@@ -1,12 +1,26 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 
 export function Hero() {
   const orbRef = useRef<HTMLDivElement>(null);
 
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(true);
+
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
     let frameId: number;
     let ticking = false;
 
@@ -14,8 +28,8 @@ export function Hero() {
       if (!ticking) {
         frameId = requestAnimationFrame(() => {
           if (orbRef.current) {
-            const x = (e.clientX / window.innerWidth - 0.5) * 30;
-            const y = (e.clientY / window.innerHeight - 0.5) * 30;
+            const x = (e.clientX / window.innerWidth - 0.5) * 20;
+            const y = (e.clientY / window.innerHeight - 0.5) * 20;
             orbRef.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
           }
           ticking = false;
@@ -23,15 +37,16 @@ export function Hero() {
         ticking = true;
       }
     };
+
     window.addEventListener("mousemove", onMove, { passive: true });
     return () => {
       window.removeEventListener("mousemove", onMove);
       cancelAnimationFrame(frameId);
     };
-  }, []);
+  }, [isVisible]);
 
   return (
-    <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-24 lg:pt-48 lg:pb-32 overflow-hidden hero-bg">
+    <section ref={sectionRef} className="relative pt-32 pb-16 sm:pt-40 sm:pb-24 lg:pt-48 lg:pb-32 overflow-hidden hero-bg">
       {/* Grid pattern */}
       <div
         className="absolute inset-0 opacity-[0.07] pointer-events-none"
@@ -95,7 +110,7 @@ export function Hero() {
 
         {/* 3D illustration */}
         <div className="relative h-[500px] hidden lg:block will-change-transform" ref={orbRef}>
-          <HeroVisual />
+          {isVisible && <HeroVisual />}
         </div>
       </div>
     </section>

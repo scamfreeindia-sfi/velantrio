@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Mail, MapPin, Phone, MessageCircle } from "lucide-react";
-import { SectionHeader } from "./Services";
+import { SectionHeader } from "./SectionHeader";
 
 export function Contact() {
   const [sent, setSent] = useState(false);

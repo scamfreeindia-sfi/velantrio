@@ -1,5 +1,5 @@
 import { Inbox, Cpu, ShieldCheck, Send } from "lucide-react";
-import { SectionHeader } from "./Services";
+import { SectionHeader } from "./SectionHeader";
 
 const steps = [
   { icon: Inbox, title: "Data Collection", desc: "Secure intake from your systems via API, SFTP, or portal." },

@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState } from "react";
-import { SectionHeader } from "./Services";
+import { SectionHeader } from "./SectionHeader";
 import { Quote } from "lucide-react";
 
 const items = [

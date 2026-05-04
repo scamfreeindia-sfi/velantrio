@@ -43,7 +43,7 @@
 }
 
 .animate-float, .animate-float-slow, .animate-glow-pulse, .animate-spin-slow {
-  will-change: transform, opacity;
+  will-change: transform;
 }
 
 @keyframes float {
@@ -208,8 +208,8 @@ html:not(.dark) .glass {
 
 @utility glass {
   background: var(--gradient-card);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border: 1px solid oklch(1 0 0 / 0.1);
 }
 

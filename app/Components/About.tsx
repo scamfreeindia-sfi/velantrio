@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { SectionHeader } from "./Services";
+import { SectionHeader } from "./SectionHeader";
 
 const stats = [
   { value: 99.5, suffix: "%", label: "Data Accuracy" },
@@ -11,7 +11,7 @@ const stats = [
 
 function useCounter(target: number, active: boolean) {
   const [v, setV] = useState(0);
-  useEffect(() => {
+  useEffect(() => { 
     if (!active) return;
     const start = performance.now();
     const dur = 1600;

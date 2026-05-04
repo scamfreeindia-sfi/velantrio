@@ -1,5 +1,5 @@
 import { Landmark, ShoppingBag, Phone, HeartPulse, Rocket, Truck } from "lucide-react";
-import { SectionHeader } from "./Services";
+import { SectionHeader } from "./SectionHeader";
 
 const items = [
   { icon: Landmark, name: "Banking & Finance" },
