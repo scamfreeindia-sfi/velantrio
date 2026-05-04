@@ -24,8 +24,8 @@ export function Services() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeader
           eyebrow="What we do"
-          title={<>End-to-end <span className="text-gradient">outsourcing</span> services</>}
-          subtitle="Modular services that plug into your operations from day one."
+          title={<>Best-in-class <span className="text-gradient">software & BPO</span> solutions</>}
+          subtitle="Top-rated BPO, KPO, and design services serving Mohali, Chandigarh, and global clients."
         />
 
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -52,22 +52,42 @@ function ServiceCard({
   delay?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+  const rectRef = useRef<DOMRect | null>(null);
+  const ticking = useRef(false);
+
+  const onEnter = () => {
+    if (ref.current) {
+      rectRef.current = ref.current.getBoundingClientRect();
+    }
+  };
 
   const onMove = (e: React.MouseEvent) => {
-    const el = ref.current;
-    if (!el) return;
-    const r = el.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width - 0.5;
-    const y = (e.clientY - r.top) / r.height - 0.5;
-    el.style.transform = `perspective(1000px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg) translateY(-6px)`;
+    if (!ticking.current && rectRef.current) {
+      window.requestAnimationFrame(() => {
+        const el = ref.current;
+        const r = rectRef.current;
+        if (!el || !r) return;
+        
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform = `perspective(1000px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg) translateY(-6px)`;
+        ticking.current = false;
+      });
+      ticking.current = true;
+    }
   };
+
   const onLeave = () => {
-    if (ref.current) ref.current.style.transform = "perspective(1000px) rotateX(0) rotateY(0) translateY(0)";
+    rectRef.current = null;
+    if (ref.current) {
+      ref.current.style.transform = "perspective(1000px) rotateX(0) rotateY(0) translateY(0)";
+    }
   };
 
   return (
     <div
       ref={ref}
+      onMouseEnter={onEnter}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
       style={{ animationDelay: `${delay}ms`, transition: "transform 300ms cubic-bezier(.2,.8,.2,1)" }}

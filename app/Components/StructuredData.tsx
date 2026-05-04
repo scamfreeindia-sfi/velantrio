@@ -6,9 +6,11 @@ export default function StructuredData() {
     "name": "Velantrio",
     "url": "https://velantrio.com",
     "logo": "https://velantrio.com/logo.png",
-    "description": "Velantrio provides high-performance outsourcing solutions including Tele Data Validation, BPO, KPO, and Back Office Support.",
+    "description": "Velantrio is the best software and outsourcing company in Mohali & Chandigarh, providing high-performance solutions including Tele Data Validation, BPO, KPO, and Back Office Support.",
     "address": {
       "@type": "PostalAddress",
+      "addressLocality": "Mohali",
+      "addressRegion": "Punjab",
       "addressCountry": "India"
     },
     "contactPoint": {
@@ -32,8 +34,8 @@ export default function StructuredData() {
       "@type": "Organization",
       "name": "Velantrio"
     },
-    "description": "Smart outsourcing solutions including Data Validation, BPO, and KPO services for global enterprises.",
-    "areaServed": "Worldwide",
+    "description": "Best software, design, BPO, and KPO solutions in Mohali and Chandigarh. Engineered for accuracy, speed, and global scale.",
+    "areaServed": ["Mohali", "Chandigarh", "India", "Worldwide"],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Outsourcing Services",

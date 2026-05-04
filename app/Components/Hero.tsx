@@ -1,22 +1,37 @@
 "use client";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
+
 
 export function Hero() {
   const orbRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let frameId: number;
+    let ticking = false;
+
     const onMove = (e: MouseEvent) => {
-      if (!orbRef.current) return;
-      const x = (e.clientX / window.innerWidth - 0.5) * 30;
-      const y = (e.clientY / window.innerHeight - 0.5) * 30;
-      orbRef.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      if (!ticking) {
+        frameId = requestAnimationFrame(() => {
+          if (orbRef.current) {
+            const x = (e.clientX / window.innerWidth - 0.5) * 30;
+            const y = (e.clientY / window.innerHeight - 0.5) * 30;
+            orbRef.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("mousemove", onMove);
-    return () => window.removeEventListener("mousemove", onMove);
+    window.addEventListener("mousemove", onMove, { passive: true });
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      cancelAnimationFrame(frameId);
+    };
   }, []);
 
   return (
-    <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-32 overflow-hidden hero-bg">
+    <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-24 lg:pt-48 lg:pb-32 overflow-hidden hero-bg">
       {/* Grid pattern */}
       <div
         className="absolute inset-0 opacity-[0.07] pointer-events-none"
@@ -29,8 +44,8 @@ export function Hero() {
       />
 
       {/* Floating orbs */}
-      <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-primary/30 blur-3xl animate-float" />
-      <div className="absolute bottom-10 right-10 h-96 w-96 rounded-full bg-accent/20 blur-3xl animate-float-slow" />
+      <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-primary/30 blur-[80px] animate-float will-change-transform" />
+      <div className="absolute bottom-10 right-10 h-96 w-96 rounded-full bg-accent/20 blur-[100px] animate-float-slow will-change-transform" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
         <div>
@@ -47,21 +62,21 @@ export function Hero() {
             for accuracy, speed, and scale.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-accent text-primary-foreground px-6 py-3.5 font-medium shadow-[var(--shadow-glow)] hover:scale-[1.03] transition-transform"
             >
               Get Started
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform">
                 <path d="M5 12h14M13 5l7 7-7 7" />
               </svg>
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 glass rounded-xl px-6 py-3.5 font-medium hover:border-accent/40 transition-colors"
             >
               Request a Quote
-            </a>
+            </Link>
           </div>
 
           <div className="mt-10 grid grid-cols-3 gap-4 sm:gap-6 max-w-md">
@@ -79,7 +94,7 @@ export function Hero() {
         </div>
 
         {/* 3D illustration */}
-        <div className="relative h-[500px] hidden lg:block" ref={orbRef}>
+        <div className="relative h-[500px] hidden lg:block will-change-transform" ref={orbRef}>
           <HeroVisual />
         </div>
       </div>
@@ -87,7 +102,9 @@ export function Hero() {
   );
 }
 
-function HeroVisual() {
+import { memo } from "react";
+
+const HeroVisual = memo(function HeroVisual() {
   return (
     <div className="relative w-full h-full">
       {/* Center sphere */}
@@ -122,9 +139,9 @@ function HeroVisual() {
       </svg>
     </div>
   );
-}
+});
 
-function FloatingChip({ className, icon, label, value }: { className?: string; icon: string; label: string; value: string }) {
+const FloatingChip = memo(function FloatingChip({ className, icon, label, value }: { className?: string; icon: string; label: string; value: string }) {
   return (
     <div className={`absolute glass rounded-2xl p-3 pr-4 flex items-center gap-3 shadow-[var(--shadow-card)] ${className}`}>
       <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center text-lg">
@@ -136,4 +153,4 @@ function FloatingChip({ className, icon, label, value }: { className?: string; i
       </div>
     </div>
   );
-}
+});

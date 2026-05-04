@@ -17,7 +17,7 @@ export function Industries() {
         <SectionHeader
           eyebrow="Industries"
           title={<>Trusted across <span className="text-gradient">industries</span></>}
-          subtitle="Domain expertise that meets you where you are."
+          subtitle="Global domain expertise with a strong local presence in Mohali and Chandigarh."
         />
 
         <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">

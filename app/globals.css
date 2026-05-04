@@ -42,6 +42,10 @@
   --animate-spin-slow: spin 18s linear infinite;
 }
 
+.animate-float, .animate-float-slow, .animate-glow-pulse, .animate-spin-slow {
+  will-change: transform, opacity;
+}
+
 @keyframes float {
 
   0%,
@@ -135,9 +139,8 @@
   --input: oklch(1 0 0 / 12%);
   --ring: oklch(0.85 0.16 200);
 
-  --gradient-hero: radial-gradient(ellipse at 20% 0%, oklch(0.62 0.22 295 / 0.35), transparent 55%),
-    radial-gradient(ellipse at 80% 30%, oklch(0.85 0.16 200 / 0.22), transparent 50%),
-    radial-gradient(ellipse at 50% 100%, oklch(0.45 0.18 265 / 0.4), transparent 60%);
+  --gradient-hero: radial-gradient(ellipse at 20% 0%, oklch(0.62 0.22 295 / 0.3), transparent 50%),
+    radial-gradient(ellipse at 80% 80%, oklch(0.85 0.16 200 / 0.15), transparent 50%);
   --gradient-text: linear-gradient(120deg, oklch(0.97 0.01 250) 0%, oklch(0.85 0.16 200) 50%, oklch(0.72 0.22 295) 100%);
   --gradient-card: linear-gradient(140deg, oklch(1 0 0 / 0.06) 0%, oklch(1 0 0 / 0.02) 100%);
   --gradient-border: linear-gradient(140deg, oklch(0.85 0.16 200 / 0.5), oklch(0.62 0.22 295 / 0.5));
@@ -199,14 +202,14 @@ html:not(.dark) .glass {
     background-image:
       radial-gradient(ellipse 80% 50% at 50% -10%, oklch(0.62 0.22 295 / 0.18), transparent),
       radial-gradient(ellipse 60% 40% at 90% 30%, oklch(0.85 0.16 200 / 0.10), transparent);
-    background-attachment: fixed;
+    /* background-attachment: fixed; - Performance heavy */
   }
 }
 
 @utility glass {
   background: var(--gradient-card);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid oklch(1 0 0 / 0.1);
 }
 
@@ -220,14 +223,19 @@ html:not(.dark) .glass {
 }
 
 @utility hero-bg {
+  position: relative;
+  overflow: hidden;
   background: var(--gradient-hero);
-  background-size: 200% 200%;
-  animation: gradient-shift 20s ease infinite;
+}
+
+/* Static background with subtle animated overlay is better than animating whole section background */
+@utility hero-bg-animate {
+  background: var(--gradient-hero);
 }
 
 @utility section-optimize {
   content-visibility: auto;
-  contain-intrinsic-size: 1px 500px;
+  contain-intrinsic-size: 1px 1000px; /* Better estimation for large sections */
 }
 
 @utility glow-border {

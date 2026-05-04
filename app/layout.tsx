@@ -30,23 +30,23 @@ import StructuredData from "./Components/StructuredData";
 export const metadata: Metadata = {
   metadataBase: new URL("https://velantrio.com"),
   title: {
-    default: "Velantrio | Expert BPO, KPO & Tele Data Validation Services",
-    template: "%s | Velantrio Outsourcing"
+    default: "Velantrio | Best BPO, KPO & Software Solutions in Mohali & Chandigarh",
+    template: "%s | Velantrio Outsourcing Mohali"
   },
-  description: "Velantrio is a premium outsourcing partner providing high-accuracy Tele Data Validation, BPO, KPO, and Back Office Support globally. Scale your business with our data-driven solutions.",
+  description: "Velantrio is the best software and outsourcing company in Mohali & Chandigarh. We provide high-accuracy Tele Data Validation, BPO, KPO, and Back Office Support globally.",
   keywords: [
-    "Business Process Outsourcing India",
-    "Knowledge Process Outsourcing",
-    "Tele Data Validation experts",
-    "Back Office Support services",
-    "Lead Generation solutions",
-    "Data Enrichment services",
-    "Velantrio Outsourcing",
-    "Global BPO partner",
-    "Data Validation for sales",
-    "Cost-effective outsourcing",
-    "Enterprise data solutions",
-    "Outsourced customer support"
+    "Best Software Company Mohali",
+    "Top Design Agency Chandigarh",
+    "BPO Services Mohali",
+    "KPO Company Chandigarh",
+    "Tele Data Validation Mohali",
+    "Software Development Chandigarh",
+    "Velantrio Outsourcing India",
+    "IT Services Mohali",
+    "Business Process Outsourcing Chandigarh",
+    "Knowledge Process Outsourcing Mohali",
+    "Back Office Support Chandigarh",
+    "Lead Generation Mohali"
   ],
   authors: [{ name: "Velantrio" }],
   creator: "Velantrio",

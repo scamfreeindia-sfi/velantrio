@@ -73,21 +73,21 @@ export function Footer() {
           <FooterCol 
             title="Services" 
             links={[
-              { name: "Tele Data Validation", href: "#services" },
-              { name: "Voice Process", href: "#services" },
-              { name: "Non-Voice Support", href: "#services" },
-              { name: "KPO Services", href: "#services" },
-              { name: "Loan Processing", href: "#services" }
+              { name: "Tele Data Validation", href: "/services" },
+              { name: "Voice Process", href: "/services" },
+              { name: "Non-Voice Support", href: "/services" },
+              { name: "KPO Services", href: "/services" },
+              { name: "Loan Processing", href: "/services" }
             ]} 
           />
           <FooterCol 
             title="Company" 
             links={[
-              { name: "About", href: "#about" },
-              { name: "Industries", href: "#industries" },
-              { name: "Process", href: "#process" },
-              { name: "Contact", href: "#contact" },
-              { name: "Careers", href: "#contact" }
+              { name: "About", href: "/about" },
+              { name: "Industries", href: "/#industries" },
+              { name: "Process", href: "/#process" },
+              { name: "Contact", href: "/contact" },
+              { name: "Careers", href: "/contact" }
             ]} 
           />
         </div>
@@ -95,9 +95,9 @@ export function Footer() {
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-muted-foreground">
           <div>© {new Date().getFullYear()} Velantrio Group. All rights reserved.</div>
           <div className="flex gap-5">
-            <a href="#contact" className="hover:text-foreground">Privacy</a>
-            <a href="#contact" className="hover:text-foreground">Terms</a>
-            <a href="#contact" className="hover:text-foreground">Security</a>
+            <a href="/contact" className="hover:text-foreground">Privacy</a>
+            <a href="/contact" className="hover:text-foreground">Terms</a>
+            <a href="/contact" className="hover:text-foreground">Security</a>
           </div>
         </div>
       </div>

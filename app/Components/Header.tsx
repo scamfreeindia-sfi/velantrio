@@ -6,12 +6,12 @@ import { ThemeToggle } from "./ThemeToggle";
 import Image from "next/image";
 
 const links = [
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
-  { href: "#why", label: "Why Us" },
-  { href: "#process", label: "Process" },
-  { href: "#industries", label: "Industries" },
-  { href: "#contact", label: "Contact" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/#why", label: "Why Us" },
+  { href: "/#process", label: "Process" },
+  { href: "/#industries", label: "Industries" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Header() {
@@ -19,27 +19,41 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    let frameId: number;
+    let ticking = false;
+
+    const onScroll = () => {
+      if (!ticking) {
+        frameId = requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(frameId);
+    };
   }, []);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "py-3" : "py-5"
+      className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
+        scrolled ? "translate-y-0" : "translate-y-0"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-4">
         <nav
-          className={`glass flex items-center justify-between rounded-2xl px-4 sm:px-5 py-2.5 sm:py-3 gap-2 ${
+          className={`glass flex items-center justify-between rounded-2xl px-4 sm:px-5 py-3 gap-2 transition-shadow ${
             scrolled
-              ? "shadow-[0_10px_40px_-10px_oklch(0.1_0.05_270_/_0.6)]"
+              ? "shadow-[0_10px_40px_-10px_oklch(0.1_0.05_270_/_0.6)] border-accent/20"
               : ""
           }`}
         >
           {/* Logo */}
-          <Link href="#" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2 group">
             <div className="relative h-9 w-9 rounded-xl bg-gradient-to-br from-accent via-primary to-deep-blue shadow-[var(--shadow-glow)] flex items-center justify-center">
               <Image
                 src="/logo.png"
@@ -47,6 +61,7 @@ export function Header() {
                 width={32}
                 height={32}
                 className="rounded-xl"
+                priority
               />
               <div className="absolute inset-0 rounded-xl ring-1 ring-white/20" />
             </div>
@@ -78,7 +93,7 @@ export function Header() {
             <ThemeToggle />
 
             <Link
-              href="#contact"
+              href="/contact"
               className="hidden md:inline-flex items-center rounded-xl bg-gradient-to-r from-primary to-accent text-primary-foreground px-4 py-2 text-sm font-medium shadow-[var(--shadow-glow)] hover:scale-[1.03] transition-transform"
             >
               Get a Quote
@@ -122,7 +137,7 @@ export function Header() {
             ))}
 
             <Link
-              href="#contact"
+              href="/contact"
               onClick={() => setOpen(false)}
               className="rounded-xl bg-gradient-to-r from-primary to-accent text-primary-foreground px-4 py-2 text-sm font-medium text-center"
             >
