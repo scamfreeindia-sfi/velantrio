@@ -1,5 +1,14 @@
+import { Metadata } from "next";
 import { Header } from "../Components/Header";
 import { Footer } from "../Components/Footer";
+
+export const metadata: Metadata = {
+  title: "Security & Compliance | Velantrio",
+  description: "Learn about our rigorous security protocols, ISO certifications, and GDPR compliance measures.",
+  alternates: {
+    canonical: "/security",
+  },
+};
 import { ShieldCheck, Lock, Eye, Database, Globe } from "lucide-react";
 
 export default function SecurityPage() {

@@ -9,6 +9,7 @@ const WhyUs = dynamic(() => import("./Components/WhyUs").then(mod => mod.WhyUs))
 const Process = dynamic(() => import("./Components/Process").then(mod => mod.Process));
 const Industries = dynamic(() => import("./Components/Industries").then(mod => mod.Industries));
 const Testimonials = dynamic(() => import("./Components/Testimonials").then(mod => mod.Testimonials));
+const BlogSection = dynamic(() => import("./Components/BlogSection").then(mod => mod.BlogSection));
 const Contact = dynamic(() => import("./Components/Contact").then(mod => mod.Contact));
 const Footer = dynamic(() => import("./Components/Footer").then(mod => mod.Footer));
 
@@ -24,6 +25,7 @@ export default function Home() {
         <Process />
         <Industries />
         <Testimonials />
+        <BlogSection />
         <Contact />
       </main>
       <Footer />

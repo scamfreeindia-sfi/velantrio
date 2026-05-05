@@ -1,9 +1,18 @@
+import { Metadata } from "next";
 import { industriesData } from "@/app/data/industries";
 import { Header } from "@/app/Components/Header";
 import { Footer } from "@/app/Components/Footer";
 import { SectionHeader } from "@/app/Components/SectionHeader";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Industry Solutions | Specialized Outsourcing",
+  description: "Explore how Velantrio's specialized outsourcing services empower businesses across Banking, E-commerce, Healthcare, and more.",
+  alternates: {
+    canonical: "/industries",
+  },
+};
 
 export default function IndustriesPage() {
   const industries = Object.values(industriesData);

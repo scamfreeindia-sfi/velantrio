@@ -1,6 +1,15 @@
+import { Metadata } from "next";
 import { Header } from "../Components/Header";
 import { Contact as ContactSection } from "../Components/Contact";
 import { Footer } from "../Components/Footer";
+
+export const metadata: Metadata = {
+  title: "Contact Velantrio | Get a Quote for Outsourcing",
+  description: "Ready to scale? Contact Velantrio today for a personalized quote on our BPO, KPO, and data validation services.",
+  alternates: {
+    canonical: "/contact",
+  },
+};
 
 export default function ContactPage() {
   return (

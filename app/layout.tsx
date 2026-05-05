@@ -88,13 +88,14 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code", // Replace when available
+    google: "google-site-verification=CuBrkL8RCk4f9JPoFHCUpGdMvltucTpRTtByr66kCQ0",
   },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
     apple: "/logo.png",
-  }
+  },
+  manifest: "/manifest.webmanifest",
 };
 
 export default function RootLayout({
