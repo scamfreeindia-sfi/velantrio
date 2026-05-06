@@ -10,12 +10,12 @@ const services = [
     desc: "Verify, clean, and enrich your customer data with industry-leading accuracy.",
     primary: true,
   },
+  { icon: Code2, title: "Web Development", desc: "Modern websites, web apps, and dashboards built with cutting-edge tech." },
   { icon: Phone, title: "Voice Process", desc: "Inbound & outbound call handling, sales support, and customer care." },
   { icon: MessageSquare, title: "Non-Voice Support", desc: "Email, chat, and ticketing services with rapid response times." },
   { icon: Database, title: "Data Entry & Processing", desc: "High-volume, high-accuracy data operations across formats." },
   { icon: BarChart3, title: "KPO Services", desc: "Research, financial analysis, and knowledge-driven business support." },
   { icon: Banknote, title: "Loan Processing", desc: "End-to-end loan documentation, verification, and back office." },
-  { icon: Code2, title: "Web Development", desc: "Modern websites, web apps, and dashboards built with cutting-edge tech." },
   { icon: Headphones, title: "24/7 Customer Care", desc: "Always-on support that scales with your business needs." },
 ];
 
