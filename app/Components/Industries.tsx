@@ -8,7 +8,6 @@ const items = [
   { icon: Phone, name: "Telecom", slug: "telecom" },
   { icon: HeartPulse, name: "Healthcare", slug: "healthcare" },
   { icon: Rocket, name: "Startups", slug: "startups" },
-  { icon: Truck, name: "Logistics", slug: "logistics" },
 ];
 
 export function Industries() {

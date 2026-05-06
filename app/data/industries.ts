@@ -96,23 +96,4 @@ export const industriesData = {
       "Growth-Ops Support"
     ]
   },
-  "logistics": {
-    title: "Logistics",
-    slug: "logistics",
-    icon: Truck,
-    description: "Global supply chain support, freight documentation, and real-time tracking.",
-    fullDescription: "Moving goods globally requires mountain of documentation. We help logistics companies manage freight bills, customs docs, and dispatch coordination.",
-    benefits: [
-      { icon: Zap, title: "Supply Chain Speed", desc: "Reduced delays through rapid document processing." },
-      { icon: Shield, title: "Audit Readiness", desc: "Perfectly organized records for customs and insurance." },
-      { icon: BarChart, title: "Visibility", desc: "Real-time tracking updates and data entry for fleet mgmt." }
-    ],
-    services: [
-      "Freight Bill Entry",
-      "Customs Documentation",
-      "Dispatch Coordination",
-      "Tracking & Tracing Data",
-      "Supply Chain Data Analytics"
-    ]
-  }
 };
