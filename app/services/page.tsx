@@ -1,6 +1,15 @@
+import { Metadata } from "next";
 import { Header } from "../Components/Header";
 import { Services as ServicesSection } from "../Components/Services";
 import { Footer } from "../Components/Footer";
+
+export const metadata: Metadata = {
+  title: "Outsourcing Services | BPO, KPO & Data Validation",
+  description: "Comprehensive outsourcing solutions including Tele Data Validation, BPO, KPO, and Back Office support designed for global scale.",
+  alternates: {
+    canonical: "/services/",
+  },
+};
 
 export default function ServicesPage() {
   return (

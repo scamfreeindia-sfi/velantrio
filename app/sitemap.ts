@@ -10,14 +10,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Static routes
   const staticRoutes = [
     '',
-    '/about',
-    '/services',
-    '/contact',
-    '/privacy',
-    '/terms',
-    '/security',
-    '/industries',
-    '/blog',
+    '/about/',
+    '/services/',
+    '/contact/',
+    '/privacy/',
+    '/terms/',
+    '/security/',
+    '/industries/',
+    '/blog/',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Dynamic industry routes
   const industryRoutes = Object.keys(industriesData).map((slug) => ({
-    url: `${baseUrl}/industries/${slug}`,
+    url: `${baseUrl}/industries/${slug}/`,
     lastModified: new Date().toISOString(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
@@ -35,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Dynamic blog routes
   const blogRoutes = blogPosts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
+    url: `${baseUrl}/blog/${post.slug}/`,
     lastModified: new Date().toISOString(),
     changeFrequency: 'monthly' as const,
     priority: 0.6,

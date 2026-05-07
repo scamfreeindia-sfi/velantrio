@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Industry Solutions | Specialized Outsourcing",
   description: "Explore how Velantrio's specialized outsourcing services empower businesses across Banking, E-commerce, Healthcare, and more.",
   alternates: {
-    canonical: "/industries",
+    canonical: "/industries/",
   },
 };
 

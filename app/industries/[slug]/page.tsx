@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { industriesData } from "@/app/data/industries";
 import { Header } from "@/app/Components/Header";
 import { Footer } from "@/app/Components/Footer";
@@ -10,6 +11,25 @@ export function generateStaticParams() {
   return Object.keys(industriesData).map((slug) => ({
     slug,
   }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const industry = industriesData[slug as keyof typeof industriesData];
+  
+  if (!industry) return { title: "Industry Not Found" };
+
+  return {
+    title: `${industry.title} Outsourcing Solutions | Velantrio`,
+    description: industry.description,
+    alternates: {
+      canonical: `/industries/${slug}/`,
+    },
+    openGraph: {
+      title: `${industry.title} Outsourcing`,
+      description: industry.description,
+    },
+  };
 }
 
 export default async function IndustryPage({ params }: { params: Promise<{ slug: string }> }) {

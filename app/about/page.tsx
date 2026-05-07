@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "About Us | Global Outsourcing Leaders",
   description: "Learn about Velantrio's mission to provide high-accuracy BPO and KPO solutions. Our history, values, and commitment to global excellence.",
   alternates: {
-    canonical: "/about",
+    canonical: "/about/",
   },
 };
 

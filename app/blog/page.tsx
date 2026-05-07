@@ -5,9 +5,14 @@ import { SectionHeader } from "@/app/Components/SectionHeader";
 import Link from "next/link";
 import { ArrowRight, Calendar, User } from "lucide-react";
 
-export const metadata = {
-  title: "Insights & Articles",
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Insights & Articles | Velantrio Outsourcing",
   description: "Expert advice on BPO, KPO, and data validation from the Velantrio team.",
+  alternates: {
+    canonical: "/blog/",
+  },
 };
 
 export default function BlogPage() {

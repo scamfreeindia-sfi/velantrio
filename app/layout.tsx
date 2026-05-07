@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "google-site-verification=CuBrkL8RCk4f9JPoFHCUpGdMvltucTpRTtByr66kCQ0",
+    google: "CuBrkL8RCk4f9JPoFHCUpGdMvltucTpRTtByr66kCQ0",
   },
   icons: {
     icon: "/favicon.ico",

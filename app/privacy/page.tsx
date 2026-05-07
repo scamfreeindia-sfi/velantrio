@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Velantrio",
   description: "Our commitment to protecting your data and privacy. Learn how Velantrio handles information in compliance with global standards.",
   alternates: {
-    canonical: "/privacy",
+    canonical: "/privacy/",
   },
 };
 

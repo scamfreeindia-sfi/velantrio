@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Terms of Service | Velantrio",
   description: "Read the terms and conditions for using Velantrio's services and website.",
   alternates: {
-    canonical: "/terms",
+    canonical: "/terms/",
   },
 };
 

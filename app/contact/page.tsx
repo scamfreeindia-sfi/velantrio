@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Contact Velantrio | Get a Quote for Outsourcing",
   description: "Ready to scale? Contact Velantrio today for a personalized quote on our BPO, KPO, and data validation services.",
   alternates: {
-    canonical: "/contact",
+    canonical: "/contact/",
   },
 };
 

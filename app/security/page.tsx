@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Security & Compliance | Velantrio",
   description: "Learn about our rigorous security protocols, ISO certifications, and GDPR compliance measures.",
   alternates: {
-    canonical: "/security",
+    canonical: "/security/",
   },
 };
 import { ShieldCheck, Lock, Eye, Database, Globe } from "lucide-react";
