@@ -23,7 +23,7 @@ export default function PrivacyPage() {
             <section>
               <h2 className="text-2xl font-bold text-foreground mb-4">1. Introduction</h2>
               <p>
-                At Velantrio Private Limited ("Velantrio", "we", "us", or "our"), we respect your privacy and are committed to protecting it through our compliance with this policy. This policy describes the types of information we may collect from you or that you may provide when you visit the website velantrio.com and our practices for collecting, using, maintaining, protecting, and disclosing that information.
+                At Velantrio Ventures ("Velantrio", "we", "us", or "our"), we respect your privacy and are committed to protecting it through our compliance with this policy. This policy describes the types of information we may collect from you or that you may provide when you visit the website velantrio.com and our practices for collecting, using, maintaining, protecting, and disclosing that information.
               </p>
             </section>
 

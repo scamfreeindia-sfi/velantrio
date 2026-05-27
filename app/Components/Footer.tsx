@@ -52,7 +52,7 @@ export function Footer() {
                   Velantrio
                 </span>
                 <span className="text-[10px] text-accent/80 font-semibold uppercase tracking-widest -mt-0.5">
-                  Private Limited
+                  Ventures
                 </span>
               </div>
             </div>
@@ -67,9 +67,9 @@ export function Footer() {
                 { Icon: FacebookIcon, label: "Facebook", href: "#" },
                 { Icon: InstagramIcon, label: "Instagram", href: "#" }
               ].map(({ Icon, label, href }, i) => (
-                <a 
-                  key={i} 
-                  href={href} 
+                <a
+                  key={i}
+                  href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
@@ -81,25 +81,25 @@ export function Footer() {
             </div>
           </div>
 
-          <FooterCol 
-            title="Services" 
+          <FooterCol
+            title="Services"
             links={[
               { name: "Tele Data Validation", href: "/services" },
               { name: "Voice Process", href: "/services" },
               { name: "Non-Voice Support", href: "/services" },
               { name: "KPO Services", href: "/services" },
               { name: "Loan Processing", href: "/services" }
-            ]} 
+            ]}
           />
-          <FooterCol 
-            title="Company" 
+          <FooterCol
+            title="Company"
             links={[
               { name: "About", href: "/about" },
               { name: "Industries", href: "/industries" },
               { name: "Process", href: "/#process" },
               { name: "Contact", href: "/contact" },
               { name: "Careers", href: "/contact" }
-            ]} 
+            ]}
           />
         </div>
 

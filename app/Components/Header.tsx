@@ -41,17 +41,15 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
-        scrolled ? "translate-y-0" : "translate-y-0"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${scrolled ? "translate-y-0" : "translate-y-0"
+        }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-4">
         <nav
-          className={`glass flex items-center justify-between rounded-2xl px-4 sm:px-5 py-3 gap-2 transition-shadow ${
-            scrolled
+          className={`glass flex items-center justify-between rounded-2xl px-4 sm:px-5 py-3 gap-2 transition-shadow ${scrolled
               ? "shadow-[0_10px_40px_-10px_oklch(0.1_0.05_270_/_0.6)] border-accent/20"
               : ""
-          }`}
+            }`}
         >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
@@ -71,7 +69,7 @@ export function Header() {
                 Velantrio
               </span>
               <span className="text-[10px] text-accent/80 font-semibold uppercase tracking-widest -mt-0.5">
-                Private Limited
+                Ventures
               </span>
             </div>
           </Link>

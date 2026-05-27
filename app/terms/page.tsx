@@ -30,21 +30,21 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-bold text-foreground mb-4">2. Provision of Services</h2>
               <p>
-                Velantrio Private Limited provides specialized BPO, KPO, and software outsourcing services. We reserve the right to modify or discontinue any service with or without notice to you.
+                Velantrio Ventures provides specialized BPO, KPO, and software outsourcing services. We reserve the right to modify or discontinue any service with or without notice to you.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-bold text-foreground mb-4">3. Intellectual Property</h2>
               <p>
-                The Website and its original content, features, and functionality are owned by Velantrio Private Limited and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
+                The Website and its original content, features, and functionality are owned by Velantrio Ventures and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-bold text-foreground mb-4">4. Limitation of Liability</h2>
               <p>
-                In no event shall Velantrio Private Limited, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.
+                In no event shall Velantrio Ventures, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.
               </p>
             </section>
 
