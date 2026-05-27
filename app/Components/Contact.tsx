@@ -34,7 +34,7 @@ export function Contact() {
             </div>
             <ContactItem icon={Mail} label="Email" value="info@velantrio.com" />
             <ContactItem icon={Phone} label="Phone" value="+91 8930071652" />
-            <ContactItem icon={MapPin} label="Office" value="Mohali, Punjab, India" />
+            <ContactItem icon={MapPin} label="Office" value="Plot no I - 36, Sector 83, JLPL Industrial Area, Sahibzada Ajit Singh Nagar, Punjab 140306" />
             
 
             <div className="pt-4 border-t border-white/10">

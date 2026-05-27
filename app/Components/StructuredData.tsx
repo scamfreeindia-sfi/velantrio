@@ -9,8 +9,10 @@ export default function StructuredData() {
     "description": "Velantrio is the best software and outsourcing company in Mohali & Chandigarh, providing high-performance solutions including Tele Data Validation, BPO, KPO, and Back Office Support.",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Mohali",
+      "streetAddress": "Plot no I - 36, Sector 83, JLPL Industrial Area",
+      "addressLocality": "Sahibzada Ajit Singh Nagar (Mohali)",
       "addressRegion": "Punjab",
+      "postalCode": "140306",
       "addressCountry": "India"
     },
     "contactPoint": {
