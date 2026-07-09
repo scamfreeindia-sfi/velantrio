@@ -1,13 +1,16 @@
-import { Landmark, ShoppingBag, Phone, HeartPulse, Rocket, Truck } from "lucide-react";
+import { Landmark, ShieldCheck, Home, HeartPulse, Phone, ShoppingBag, Cloud, Scale } from "lucide-react";
 import { SectionHeader } from "./SectionHeader";
 import Link from "next/link";
 
 const items = [
-  { icon: Landmark, name: "Banking & Finance", slug: "banking-finance" },
-  { icon: ShoppingBag, name: "E-commerce", slug: "e-commerce" },
-  { icon: Phone, name: "Telecom", slug: "telecom" },
+  { icon: Landmark, name: "Banking", slug: "banking" },
+  { icon: ShieldCheck, name: "Insurance", slug: "insurance" },
+  { icon: Home, name: "Mortgage", slug: "mortgage" },
   { icon: HeartPulse, name: "Healthcare", slug: "healthcare" },
-  { icon: Rocket, name: "Startups", slug: "startups" },
+  { icon: Phone, name: "Telecom", slug: "telecom" },
+  { icon: ShoppingBag, name: "Ecommerce", slug: "ecommerce" },
+  { icon: Cloud, name: "SaaS", slug: "saas" },
+  { icon: Scale, name: "Legal Services", slug: "legal-services" },
 ];
 
 export function Industries() {
@@ -20,7 +23,7 @@ export function Industries() {
           subtitle="Global domain expertise with a strong local presence in Mohali and Chandigarh."
         />
 
-        <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {items.map((it, i) => (
             <Link
               key={it.name}

@@ -34,7 +34,7 @@ export function Footer() {
     <footer className="relative border-t border-white/10 mt-20 bg-black/20">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5 pointer-events-none" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
-        <div className="grid md:grid-cols-4 gap-10">
+        <div className="grid md:grid-cols-5 gap-10">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3">
               <div className="relative h-9 w-9 rounded-xl bg-gradient-to-br from-accent via-primary to-deep-blue shadow-[var(--shadow-glow)] flex items-center justify-center">
@@ -96,9 +96,17 @@ export function Footer() {
             links={[
               { name: "About", href: "/about" },
               { name: "Industries", href: "/industries" },
-              { name: "Process", href: "/#process" },
-              { name: "Contact", href: "/contact" },
-              { name: "Careers", href: "/contact" }
+              { name: "Careers", href: "/careers" },
+              { name: "Contact", href: "/contact" }
+            ]}
+          />
+          <FooterCol
+            title="Resources"
+            links={[
+              { name: "Case Studies", href: "/case-studies" },
+              { name: "Compliance Center", href: "/compliance" },
+              { name: "Resources Hub", href: "/resources" },
+              { name: "Blog", href: "/blog" }
             ]}
           />
         </div>

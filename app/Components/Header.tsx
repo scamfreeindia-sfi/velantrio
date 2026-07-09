@@ -7,11 +7,10 @@ import Image from "next/image";
 
 const links = [
   { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/#why", label: "Why Us" },
-  { href: "/#process", label: "Process" },
   { href: "/industries", label: "Industries" },
-  { href: "/blog", label: "Blog" },
+  { href: "/case-studies", label: "Case Studies" },
+  { href: "/resources", label: "Resources" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 

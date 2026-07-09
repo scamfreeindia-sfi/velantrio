@@ -1,13 +1,13 @@
-import { Target, Zap, DollarSign, Users, ShieldCheck, Globe2 } from "lucide-react";
+import { Workflow, Database, TrendingDown, ShieldCheck, Landmark, CheckCircle } from "lucide-react";
 import { SectionHeader } from "./SectionHeader";
 
 const features = [
-  { icon: Target, title: "High Accuracy", desc: "Multi-stage QC ensures 99%+ accuracy across deliverables." },
-  { icon: Zap, title: "Fast Turnaround", desc: "Optimized workflows for same-day and 24h SLAs." },
-  { icon: DollarSign, title: "Cost Effective", desc: "Up to 60% savings vs in-house teams without quality loss." },
-  { icon: Users, title: "Scalable Team", desc: "Ramp from 5 to 500 agents in days, not months." },
-  { icon: ShieldCheck, title: "Data Security", desc: "Enterprise-grade compliance, encryption, and access control." },
-  { icon: Globe2, title: "Global Coverage", desc: "Multi-shore delivery across timezones and languages." },
+  { icon: Workflow, title: "Zero-Disruption Transition Plan", desc: "From Discovery and Pilot to Go-Live, our seamless migration protocol guarantees zero downtime for your critical workflows." },
+  { icon: Database, title: "Tele Data Validation", desc: "High-accuracy, multi-point data verification to eliminate friction, prevent fraud, and accelerate underwriting pipelines." },
+  { icon: TrendingDown, title: "40–60% Cost Reduction", desc: "Dramatically lower your operational overhead instantly, while you retain final decision authority and claims approval strictly in-house." },
+  { icon: ShieldCheck, title: "Ironclad Security Compliance", desc: "Built on ISO 27001, SOC 2, and GDPR-ready frameworks. We treat your data security as our primary competitive advantage." },
+  { icon: Landmark, title: "Enterprise Governance", desc: "Robust oversight structures, SLA-driven accountability, and dedicated account managers who act as a direct extension of your operations." },
+  { icon: CheckCircle, title: "99%+ Quality Assurance", desc: "Multi-stage quality control loops and rigorous continuous monitoring designed to protect and elevate your brand reputation." },
 ];
 
 export function WhyUs() {
@@ -15,9 +15,9 @@ export function WhyUs() {
     <section id="why" className="relative py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeader
-          eyebrow="Why choose us"
-          title={<>An operating partner that <span className="text-gradient">moves like you</span></>}
-          subtitle="Six reasons leading teams pick Velantrio over traditional vendors."
+          eyebrow="The Velantrio Advantage"
+          title={<>Scale operations. <span className="text-gradient">Eliminate risk.</span></>}
+          subtitle="Why risk-averse COOs and Operations Directors trust Velantrio as their enterprise growth partner."
         />
 
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
