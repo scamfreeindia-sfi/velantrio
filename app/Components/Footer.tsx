@@ -112,7 +112,11 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-          <div>© {new Date().getFullYear()} Velantrio Group. All rights reserved.</div>
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center">
+            <span>© {new Date().getFullYear()} Velantrio Group. All rights reserved.</span>
+            <span className="hidden sm:inline text-white/20">|</span>
+            <span>GSTIN: 031HZPS5878A1ZK</span>
+          </div>
           <div className="flex gap-5">
             <Link href="/privacy" className="hover:text-foreground">Privacy</Link>
             <Link href="/terms" className="hover:text-foreground">Terms</Link>
