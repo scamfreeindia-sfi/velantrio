@@ -35,7 +35,7 @@ export function Contact() {
             <ContactItem icon={Mail} label="Email" value="info@velantrio.com" />
             <ContactItem icon={Phone} label="Phone" value="+91 8930071652" />
             <ContactItem icon={MapPin} label="Office" value="Plot no I - 36, Sector 83, JLPL Industrial Area, Sahibzada Ajit Singh Nagar, Punjab 140306" />
-            <ContactItem icon={FileText} label="GSTIN" value="031HZPS5878A1ZK" />
+            <ContactItem icon={FileText} label="GSTIN" value="03IHZPS5878A1ZK" />
 
             <div className="pt-4 border-t border-white/10">
               <div className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Hours</div>
