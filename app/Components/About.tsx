@@ -78,6 +78,14 @@ export function About() {
             in-house operation.
           </p>
 
+          <div className="mt-8 rounded-3xl border border-primary/20 bg-primary/5 p-6 shadow-xl shadow-primary/10 sm:p-8">
+            <p className="text-sm sm:text-base font-medium text-muted-foreground leading-relaxed">
+              Founded by Ankit Sharma, Velantrio Venture brings enterprise-grade security,
+              operational precision, and long-term partnership into every client
+              engagement.
+            </p>
+          </div>
+
           <div className="mt-8 flex flex-wrap gap-3">
             {["ISO 27001", "GDPR Ready", "SOC 2", "PCI Aware"].map((b) => (
               <span key={b} className="glass rounded-full px-4 py-1.5 text-xs text-muted-foreground">
