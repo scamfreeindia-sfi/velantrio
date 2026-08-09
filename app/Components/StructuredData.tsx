@@ -7,6 +7,34 @@ export default function StructuredData() {
     "url": "https://velantrio.com",
     "logo": "https://velantrio.com/logo.png",
     "description": "Velantrio is the best software and outsourcing company in Mohali & Chandigarh, providing high-performance solutions including Tele Data Validation, BPO, KPO, and Back Office Support.",
+    "founder": {
+      "@type": "Person",
+      "name": "Pardeep Singh",
+      "jobTitle": "Founder",
+      "sameAs": [
+        "https://www.linkedin.com/in/pardeep-singh-343b02406",
+        "https://x.com/Pardeepsin68085"
+      ]
+    },
+    "employee": [
+      {
+        "@type": "Person",
+        "name": "Pardeep Singh",
+        "jobTitle": "Founder",
+        "sameAs": [
+          "https://www.linkedin.com/in/pardeep-singh-343b02406",
+          "https://x.com/Pardeepsin68085"
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ankit Sharma",
+        "jobTitle": "Chief Executive Officer (CEO)",
+        "sameAs": [
+          "https://www.linkedin.com/company/velantrio"
+        ]
+      }
+    ],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Plot no I - 36, Sector 83, JLPL Industrial Area",
@@ -24,7 +52,9 @@ export default function StructuredData() {
     },
     "sameAs": [
       "https://www.linkedin.com/company/velantrio",
-      "https://twitter.com/velantrio"
+      "https://twitter.com/velantrio",
+      "https://www.linkedin.com/in/pardeep-singh-343b02406",
+      "https://x.com/Pardeepsin68085"
     ]
   };
 

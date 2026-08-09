@@ -4,8 +4,8 @@ import { About as AboutSection } from "../Components/About";
 import { Footer } from "../Components/Footer";
 
 export const metadata: Metadata = {
-  title: "About Us | Global Outsourcing Leaders",
-  description: "Learn about Velantrio's mission to provide high-accuracy BPO and KPO solutions. Our history, values, and commitment to global excellence.",
+  title: "About Us | Velantrio",
+  description: "Learn about Velantrio, founded by Pardeep Singh and led by CEO Ankit Sharma. High-accuracy BPO and KPO solutions.",
   alternates: {
     canonical: "/about/",
   },
