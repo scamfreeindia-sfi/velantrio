@@ -36,8 +36,8 @@ const leaders = [
   },
   {
     name: "Ankit Sharma",
-    role: "Chief Executive Officer (CEO)",
-    badge: "Chief Executive Officer",
+    role: "Co-Founder & CEO",
+    badge: "Co-Founder & CEO",
     initials: "AS",
     accentGradient: "from-primary via-purple-400 to-accent",
     bio: "Driving day-to-day operational execution, technology adoption, and client success. Leading cross-functional teams to deliver 24/7 high-accuracy operations, stringent SLA performance, and scalable service infrastructure.",

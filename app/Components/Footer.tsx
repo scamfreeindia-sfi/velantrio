@@ -62,7 +62,7 @@ export function Footer() {
             </p>
             <div className="mt-5 flex gap-3">
               {[
-                { Icon: LinkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/in/pardeep-singh-343b02406" },
+                { Icon: LinkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/company/143062273/admin/dashboard/" },
                 { Icon: XIcon, label: "X", href: "https://x.com/Pardeepsin68085" },
                 { Icon: FacebookIcon, label: "Facebook", href: "#" },
                 { Icon: InstagramIcon, label: "Instagram", href: "#" }

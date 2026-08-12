@@ -12,7 +12,7 @@ export default function StructuredData() {
       "name": "Pardeep Singh",
       "jobTitle": "Founder",
       "sameAs": [
-        "https://www.linkedin.com/in/pardeep-singh-343b02406",
+        "https://www.linkedin.com/company/143062273/admin/dashboard/",
         "https://x.com/Pardeepsin68085"
       ]
     },
@@ -22,7 +22,7 @@ export default function StructuredData() {
         "name": "Pardeep Singh",
         "jobTitle": "Founder",
         "sameAs": [
-          "https://www.linkedin.com/in/pardeep-singh-343b02406",
+          "https://www.linkedin.com/company/143062273/admin/dashboard/",
           "https://x.com/Pardeepsin68085"
         ]
       },
@@ -53,7 +53,7 @@ export default function StructuredData() {
     "sameAs": [
       "https://www.linkedin.com/company/velantrio",
       "https://twitter.com/velantrio",
-      "https://www.linkedin.com/in/pardeep-singh-343b02406",
+      "https://www.linkedin.com/company/143062273/admin/dashboard/",
       "https://x.com/Pardeepsin68085"
     ]
   };
