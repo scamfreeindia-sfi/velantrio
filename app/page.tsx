@@ -4,9 +4,9 @@ import { Hero } from "./Components/Hero";
 
 // Dynamic imports for below-the-fold components
 const Services = dynamic(() => import("./Components/Services").then(mod => mod.Services));
-const About = dynamic(() => import("./Components/About").then(mod => mod.About));
 const WhyUs = dynamic(() => import("./Components/WhyUs").then(mod => mod.WhyUs));
 const Process = dynamic(() => import("./Components/Process").then(mod => mod.Process));
+const About = dynamic(() => import("./Components/About").then(mod => mod.About));
 const Industries = dynamic(() => import("./Components/Industries").then(mod => mod.Industries));
 const Testimonials = dynamic(() => import("./Components/Testimonials").then(mod => mod.Testimonials));
 const BlogSection = dynamic(() => import("./Components/BlogSection").then(mod => mod.BlogSection));
@@ -20,9 +20,9 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <Services />
-        <About />
         <WhyUs />
         <Process />
+        <About />
         <Industries />
         <Testimonials />
         <BlogSection />
@@ -32,4 +32,3 @@ export default function Home() {
     </div>
   );
 }
-

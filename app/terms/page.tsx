@@ -16,51 +16,46 @@ export default function TermsPage() {
       <Header />
       <main className="flex-grow pt-32 pb-16 sm:pb-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-gradient">Terms of Service</h1>
-          <p className="mt-4 text-muted-foreground italic">Last Updated: May 4, 2026</p>
+          <div className="border-b border-border pb-6">
+            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">Terms of Service</h1>
+            <p className="mt-2 text-xs text-muted-foreground">Effective Date: May 4, 2026</p>
+          </div>
 
-          <div className="mt-12 space-y-10 text-muted-foreground leading-relaxed">
-            <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">1. Acceptance of Terms</h2>
+          <div className="mt-10 space-y-8 text-sm text-muted-foreground leading-relaxed">
+            <section className="rounded-2xl border border-border bg-card p-6 sm:p-7 shadow-xs">
+              <h2 className="text-base font-bold text-foreground mb-3">1. Acceptance of Terms</h2>
               <p>
-                By accessing and using velantrio.com, you accept and agree to be bound by the terms and provision of this agreement. In addition, when using these particular services, you shall be subject to any posted guidelines or rules applicable to such services.
+                By accessing and using velantrio.com, you agree to be bound by these Terms of Service. If you are entering into a commercial Master Services Agreement (MSA) or Statement of Work (SOW) with Velantrio, the terms of that agreement govern the specific operational deliverables and SLAs.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">2. Provision of Services</h2>
+            <section className="rounded-2xl border border-border bg-card p-6 sm:p-7 shadow-xs">
+              <h2 className="text-base font-bold text-foreground mb-3">2. Service Delivery & Statements of Work</h2>
               <p>
-                Velantrio Ventures provides specialized BPO, KPO, and software outsourcing services. We reserve the right to modify or discontinue any service with or without notice to you.
+                Velantrio Ventures provides institutional BPO, KPO, tele-data validation, and software development services. Commercial engagements are defined by written agreements specifying accuracy benchmarks, escalation paths, and delivery schedules.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">3. Intellectual Property</h2>
+            <section className="rounded-2xl border border-border bg-card p-6 sm:p-7 shadow-xs">
+              <h2 className="text-base font-bold text-foreground mb-3">3. Confidentiality & IP Ownership</h2>
               <p>
-                The Website and its original content, features, and functionality are owned by Velantrio Ventures and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
+                All client proprietary data, customer records, and custom workflows remain the exclusive intellectual property of the client. Velantrio retains ownership of its underlying platform code, proprietary training methodologies, and delivery architectures.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">4. Limitation of Liability</h2>
+            <section className="rounded-2xl border border-border bg-card p-6 sm:p-7 shadow-xs">
+              <h2 className="text-base font-bold text-foreground mb-3">4. Governing Jurisdiction</h2>
               <p>
-                In no event shall Velantrio Ventures, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.
+                These Terms are governed by the laws of India. Any disputes arising in connection with website usage or general inquiries are subject to the exclusive jurisdiction of the competent courts in Sahibzada Ajit Singh Nagar (Mohali) / Chandigarh, India.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">5. Governing Law</h2>
+            <section className="rounded-2xl border border-border bg-card p-6 sm:p-7 shadow-xs">
+              <h2 className="text-base font-bold text-foreground mb-3">5. Legal Contact</h2>
               <p>
-                These Terms shall be governed and construed in accordance with the laws of India, without regard to its conflict of law provisions. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">6. Contact Us</h2>
-              <p>
-                If you have any questions about these Terms, please contact us at:
+                For legal inquiries or notices, contact our compliance counsel at:
                 <br />
-                <span className="text-accent">info@velantrio.com</span>
+                <a href="mailto:info@velantrio.com" className="text-primary font-semibold hover:underline mt-1 inline-block">info@velantrio.com</a>
               </p>
             </section>
           </div>

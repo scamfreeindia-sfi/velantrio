@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ShieldCheck, MapPin, Mail, Phone, Lock } from "lucide-react";
 
 const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -31,36 +32,50 @@ const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/10 mt-20 bg-black/20">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5 pointer-events-none" />
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
-        <div className="grid md:grid-cols-5 gap-10">
-          <div className="md:col-span-2">
-            <div className="flex items-center gap-3">
-              <div className="relative h-9 w-9 rounded-xl bg-gradient-to-br from-accent via-primary to-deep-blue shadow-[var(--shadow-glow)] flex items-center justify-center">
+    <footer className="border-t border-border bg-card">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14 sm:py-16">
+        
+        {/* Top Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12">
+          
+          {/* Company Brief Column */}
+          <div className="md:col-span-4 space-y-4">
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="relative h-9 w-9 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center p-1 overflow-hidden">
                 <Image
                   src="/logo.png"
                   alt="Velantrio"
-                  width={32}
-                  height={32}
-                  className="rounded-xl"
+                  width={28}
+                  height={28}
+                  className="object-contain"
                 />
-                <div className="absolute inset-0 rounded-xl ring-1 ring-white/20" />
               </div>
-              <div className="flex flex-col leading-tight">
-                <span className="font-bold text-lg tracking-tight">
+              <div className="flex flex-col">
+                <span className="font-extrabold text-base tracking-tight text-foreground">
                   Velantrio
                 </span>
-                <span className="text-[10px] text-accent/80 font-semibold uppercase tracking-widest -mt-0.5">
-                  Ventures
+                <span className="text-[10px] text-muted-foreground font-semibold uppercase tracking-wider -mt-0.5">
+                  Ventures Pvt. Ltd.
                 </span>
               </div>
-            </div>
-            <p className="mt-4 text-sm text-muted-foreground max-w-sm leading-relaxed">
-              Smart outsourcing solutions for growing businesses. BPO, KPO, and
-              back office support — engineered for scale.
+            </Link>
+
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              Institutional-grade BPO, KPO, and Tele-Data Validation services engineered for high accuracy, SLA discipline, and scalable back-office growth.
             </p>
-            <div className="mt-5 flex gap-3">
+
+            <div className="pt-1 space-y-2 text-xs text-muted-foreground">
+              <div className="flex items-start gap-2">
+                <MapPin className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
+                <span>Plot No. I-36, Sector 83, JLPL Industrial Area, SAS Nagar (Mohali), Punjab 140306</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="h-3.5 w-3.5 text-primary shrink-0" />
+                <a href="mailto:info@velantrio.com" className="hover:text-foreground">info@velantrio.com</a>
+              </div>
+            </div>
+
+            <div className="pt-2 flex gap-2">
               {[
                 { Icon: LinkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/company/143062273/admin/dashboard/" },
                 { Icon: XIcon, label: "X", href: "https://x.com/Pardeepsin68085" },
@@ -73,59 +88,71 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="h-9 w-9 rounded-lg glass flex items-center justify-center hover:border-accent/40 hover:text-accent transition-colors"
+                  className="h-8 w-8 rounded-lg border border-border bg-card flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/40 transition-colors"
                 >
-                  <Icon className="h-4 w-4" />
+                  <Icon className="h-3.5 w-3.5" />
                 </a>
               ))}
             </div>
           </div>
 
-          <FooterCol
-            title="Services"
-            links={[
-              { name: "Tele Data Validation", href: "/services" },
-              { name: "Voice Process", href: "/services" },
-              { name: "Non-Voice Support", href: "/services" },
-              { name: "KPO Services", href: "/services" },
-              { name: "Loan Processing", href: "/services" }
-            ]}
-          />
-          <FooterCol
-            title="Company"
-            links={[
-              { name: "About", href: "/about" },
-              { name: "Industries", href: "/industries" },
-              { name: "Careers", href: "/careers" },
-              { name: "Contact", href: "/contact" }
-            ]}
-          />
-          <FooterCol
-            title="Resources"
-            links={[
-              { name: "Case Studies", href: "/case-studies" },
-              { name: "Compliance Center", href: "/compliance" },
-              { name: "Resources Hub", href: "/resources" },
-              { name: "Blog", href: "/blog" }
-            ]}
-          />
+          {/* Nav Columns */}
+          <div className="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
+            <FooterCol
+              title="Specialized Services"
+              links={[
+                { name: "Tele Data Validation", href: "/services" },
+                { name: "Voice Operations (BPO)", href: "/services" },
+                { name: "Non-Voice & Chat Support", href: "/services" },
+                { name: "KPO & Market Research", href: "/services" },
+                { name: "Loan & Mortgage Processing", href: "/services" },
+                { name: "Custom Software Solutions", href: "/services" }
+              ]}
+            />
+            <FooterCol
+              title="Company & Trust"
+              links={[
+                { name: "About Velantrio", href: "/about" },
+                { name: "Target Industries", href: "/industries" },
+                { name: "Executive Leadership", href: "/about" },
+                { name: "Careers & Openings", href: "/careers" },
+                { name: "Partner Program", href: "/partner" },
+                { name: "Contact Delivery Hub", href: "/contact" }
+              ]}
+            />
+            <FooterCol
+              title="Resources & Governance"
+              links={[
+                { name: "Client Case Studies", href: "/case-studies" },
+                { name: "Compliance & Security", href: "/compliance" },
+                { name: "Operational Insights Hub", href: "/resources" },
+                { name: "Industry Blog", href: "/blog" },
+                { name: "Privacy Policy", href: "/privacy" },
+                { name: "Terms of Service", href: "/terms" }
+              ]}
+            />
+          </div>
+
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-          <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center">
+        {/* Bottom Verification Strip */}
+        <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
+          <div className="flex flex-wrap gap-x-4 gap-y-1 items-center">
             <span>© {new Date().getFullYear()} Velantrio Group. All rights reserved.</span>
-            <span className="hidden sm:inline text-white/20">|</span>
+            <span className="text-border">|</span>
             <span>GSTIN: 03IHZPS5878A1ZK</span>
+            <span className="text-border">|</span>
+            <span>Delivery Hub: Mohali & Chandigarh, Punjab</span>
           </div>
-          <div className="flex gap-5">
-            <Link href="/privacy" className="hover:text-foreground">Privacy</Link>
-            <Link href="/terms" className="hover:text-foreground">Terms</Link>
-            <Link href="/security" className="hover:text-foreground">Security</Link>
+          <div className="flex gap-4">
+            <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
+            <Link href="/terms" className="hover:text-foreground transition-colors">Terms</Link>
+            <Link href="/security" className="hover:text-foreground transition-colors">Security</Link>
+            <Link href="/compliance" className="hover:text-foreground transition-colors">Compliance</Link>
           </div>
         </div>
-      </div>
 
-      
+      </div>
     </footer>
   );
 }
@@ -133,11 +160,15 @@ export function Footer() {
 function FooterCol({ title, links }: { title: string; links: { name: string; href: string }[] }) {
   return (
     <div>
-      <div className="text-sm font-semibold mb-4">{title}</div>
-      <ul className="space-y-2.5 text-sm text-muted-foreground">
+      <div className="text-xs font-bold uppercase tracking-wider text-foreground mb-4">
+        {title}
+      </div>
+      <ul className="space-y-2 text-xs sm:text-sm text-muted-foreground">
         {links.map((l) => (
           <li key={l.name}>
-            <a href={l.href} className="hover:text-accent transition-colors">{l.name}</a>
+            <Link href={l.href} className="hover:text-foreground transition-colors">
+              {l.name}
+            </Link>
           </li>
         ))}
       </ul>

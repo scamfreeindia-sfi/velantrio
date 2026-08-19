@@ -1,12 +1,14 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 
 export function ThemeToggle() {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
     const stored = typeof window !== "undefined" ? localStorage.getItem("theme") : null;
-    const isDark = stored ? stored === "dark" : true;
+    const isDark = stored === "dark";
     setDark(isDark);
     apply(isDark);
   }, []);
@@ -34,10 +36,10 @@ export function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label="Toggle theme"
-      className="relative h-9 w-9 rounded-xl glass flex items-center justify-center hover:border-accent/40 transition-colors text-foreground"
+      className="relative h-9 w-9 rounded-lg border border-border bg-card flex items-center justify-center hover:border-primary/40 transition-colors text-foreground cursor-pointer shadow-xs"
     >
-      <Sun className={`h-4 w-4 absolute transition-all ${dark ? "opacity-0 rotate-90 scale-50" : "opacity-100 rotate-0 scale-100"}`} />
-      <Moon className={`h-4 w-4 absolute transition-all ${dark ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-50"}`} />
+      <Sun className={`h-4 w-4 absolute transition-all duration-200 ${dark ? "opacity-0 rotate-90 scale-50" : "opacity-100 rotate-0 scale-100 text-amber-500"}`} />
+      <Moon className={`h-4 w-4 absolute transition-all duration-200 ${dark ? "opacity-100 rotate-0 scale-100 text-primary" : "opacity-0 -rotate-90 scale-50"}`} />
     </button>
   );
 }

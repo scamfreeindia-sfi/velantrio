@@ -1,128 +1,236 @@
 "use client";
-import { Phone, Headphones, MessageSquare, Database, BarChart3, Banknote, Sparkles, Code2 } from "lucide-react";
-import { useRef } from "react";
+
+import Link from "next/link";
+import { 
+  Phone, 
+  Headphones, 
+  MessageSquare, 
+  Database, 
+  BarChart3, 
+  Banknote, 
+  ShieldCheck, 
+  Code2, 
+  ArrowRight,
+  CheckCircle2,
+  Sparkles,
+  Search,
+  Check,
+  XCircle,
+  FileCheck
+} from "lucide-react";
 import { SectionHeader } from "./SectionHeader";
 
-const services = [
-  {
-    icon: Sparkles,
-    title: "Tele Data Validation",
-    desc: "Verify, clean, and enrich your customer data with industry-leading accuracy.",
-    primary: true,
+const specializedServices = [
+  { 
+    icon: BarChart3, 
+    title: "KPO & Financial Research", 
+    category: "Knowledge Services",
+    sla: "Analyst-Grade Output",
+    desc: "Rigorous financial modeling, quantitative data aggregation, competitor intelligence, and specialized industry briefs.",
+    points: ["Secondary market research", "Financial spreading & modeling", "Regulatory compliance tracking"],
   },
-  { icon: Code2, title: "Web Development", desc: "Modern websites, web apps, and dashboards built with cutting-edge tech." },
-  { icon: Phone, title: "Voice Process", desc: "Inbound & outbound call handling, sales support, and customer care." },
-  { icon: MessageSquare, title: "Non-Voice Support", desc: "Email, chat, and ticketing services with rapid response times." },
-  { icon: Database, title: "Data Entry & Processing", desc: "High-volume, high-accuracy data operations across formats." },
-  { icon: BarChart3, title: "KPO Services", desc: "Research, financial analysis, and knowledge-driven business support." },
-  { icon: Banknote, title: "Loan Processing", desc: "End-to-end loan documentation, verification, and back office." },
-  { icon: Headphones, title: "24/7 Customer Care", desc: "Always-on support that scales with your business needs." },
+  { 
+    icon: Phone, 
+    title: "Inbound & Outbound Voice BPO", 
+    category: "Customer Operations",
+    sla: "24/7/365 Active",
+    desc: "Trained voice professionals managing customer inquiries, escalations, lead verification, and appointment setting.",
+    points: ["Native fluency across global accents", "Omnichannel CRM integration", "100% call recording & QA scoring"],
+  },
+  { 
+    icon: MessageSquare, 
+    title: "Non-Voice & Omnichannel Support", 
+    category: "Customer Operations",
+    sla: "< 15 Min First Response",
+    desc: "High-speed email, live chat, and ticketing support across Zendesk, Freshdesk, Salesforce, and custom CRM systems.",
+    points: ["Multi-tier technical assistance", "High-volume ticket resolution", "Detailed CSAT & SLA metrics"],
+  },
+  { 
+    icon: Banknote, 
+    title: "Loan & Mortgage Processing", 
+    category: "Financial Back Office",
+    sla: "Fast-Track Turnaround",
+    desc: "End-to-end documentation intake, identity verification, income scrubbing, and title review to speed up underwriting.",
+    points: ["Document classification & OCR review", "Underwriting data preparation", "Strict PCI & financial compliance"],
+  },
+  { 
+    icon: Code2, 
+    title: "Web & Custom Automation Solutions", 
+    category: "Technology",
+    sla: "Full-Stack Agile",
+    desc: "Enterprise web platforms, internal automation workflows, portal dashboards, and API integrations built securely.",
+    points: ["Next.js & React architectures", "Automated data pipelines & APIs", "Enterprise security compliance"],
+  },
 ];
 
 export function Services() {
   return (
-    <section id="services" className="relative py-16 sm:py-24 lg:py-32 section-optimize">
+    <section id="services" className="relative py-16 sm:py-24 lg:py-32 border-b border-border bg-card">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeader
-          eyebrow="What we do"
-          title={<>Best-in-class <span className="text-gradient">software & BPO</span> solutions</>}
-          subtitle="Top-rated BPO, KPO, and design services serving Mohali, Chandigarh, and global clients."
+          eyebrow="Specialized Capabilities"
+          title={<>Institutional <span className="text-primary">BPO, KPO & Data</span> Solutions</>}
+          subtitle="Delivering guaranteed accuracy, SLA discipline, and transparent operational governance from our Mohali & Chandigarh delivery center."
         />
 
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s, i) => (
-            <ServiceCard key={s.title} {...s} delay={i * 60} />
+        {/* Featured Flagship Hero Card: Tele Data Validation */}
+        <div className="mt-14 rounded-2xl border border-primary/30 bg-muted/30 p-6 sm:p-10 shadow-xs">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+            
+            {/* Left Info */}
+            <div className="lg:col-span-7 space-y-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-primary text-primary-foreground">
+                  Flagship Capability
+                </span>
+                <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
+                  99.85% Accuracy SLA
+                </span>
+              </div>
+
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+                Tele Data Validation & Lead Scrubbing Engine
+              </h3>
+
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                Eliminate invalid contacts, bad addresses, and fraudulent leads before they hit your sales or underwriting queue. 
+                Our multi-point verification protocol validates phone connectivity, email deliverability, business tax IDs, and identity registries in real time.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-3 pt-2">
+                {[
+                  "Active phone line & carrier validation",
+                  "Postal & address normalization",
+                  "Corporate registry & GSTIN cross-checks",
+                  "Direct bidirectional CRM synchronization",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-2 text-xs font-semibold text-foreground">
+                    <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="pt-4">
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-2 rounded-lg bg-primary text-primary-foreground px-5 py-2.5 text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-colors shadow-2xs"
+                >
+                  <span>Explore Tele-Validation Specs</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Interactive Mockup Console */}
+            <div className="lg:col-span-5">
+              <div className="rounded-xl border border-border bg-card p-4 sm:p-5 shadow-xs space-y-3">
+                <div className="flex items-center justify-between pb-3 border-b border-border text-xs font-bold text-foreground">
+                  <div className="flex items-center gap-2">
+                    <FileCheck className="h-4 w-4 text-primary" />
+                    <span>Live Scrubbing Stream</span>
+                  </div>
+                  <span className="text-[10px] text-emerald-600 font-mono font-bold">14,200 / hr</span>
+                </div>
+
+                {/* Sample Record 1: Cleaned */}
+                <div className="p-3 rounded-lg bg-emerald-50/60 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800/40 text-xs">
+                  <div className="flex items-center justify-between font-mono text-[11px]">
+                    <span className="font-bold text-foreground">+1 (415) 890-2134</span>
+                    <span className="text-emerald-700 dark:text-emerald-400 font-bold flex items-center gap-1">
+                      <Check className="h-3 w-3" /> Validated (99.9%)
+                    </span>
+                  </div>
+                  <div className="text-[11px] text-muted-foreground mt-1 flex items-center justify-between">
+                    <span>Aarav Mehta · FinPath Ltd</span>
+                    <span className="text-[10px]">Carrier: Tier-1 US</span>
+                  </div>
+                </div>
+
+                {/* Sample Record 2: Invalid filtered */}
+                <div className="p-3 rounded-lg bg-rose-50/60 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-800/40 text-xs">
+                  <div className="flex items-center justify-between font-mono text-[11px]">
+                    <span className="font-bold text-foreground">+1 (555) 019-8231</span>
+                    <span className="text-rose-600 dark:text-rose-400 font-bold flex items-center gap-1">
+                      <XCircle className="h-3 w-3" /> Disconnected
+                    </span>
+                  </div>
+                  <div className="text-[11px] text-muted-foreground mt-1 flex items-center justify-between">
+                    <span>Auto-Filtered (Zero Cost)</span>
+                    <span className="text-[10px]">Flagged Fraudulent</span>
+                  </div>
+                </div>
+
+                {/* Summary bar */}
+                <div className="pt-2 flex items-center justify-between text-[11px] text-muted-foreground">
+                  <span>Batch Integrity: <strong className="text-foreground">99.88%</strong></span>
+                  <span>Latency: <strong className="text-foreground">12 min</strong></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* 5 Specialized Capabilities Grid */}
+        <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {specializedServices.map((service) => (
+            <div
+              key={service.title}
+              className="rounded-2xl border border-border bg-card p-6 sm:p-7 shadow-xs hover:border-primary/40 hover:shadow-md transition-all duration-200 flex flex-col justify-between"
+            >
+              <div>
+                {/* Header line with Category & SLA */}
+                <div className="flex items-center justify-between gap-2 mb-4">
+                  <span className="text-[11px] font-bold tracking-wider uppercase text-muted-foreground">
+                    {service.category}
+                  </span>
+                  <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-muted border border-border text-foreground">
+                    {service.sla}
+                  </span>
+                </div>
+
+                {/* Icon & Title */}
+                <div className="flex items-center gap-3.5 mb-3">
+                  <div className="h-10 w-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0">
+                    <service.icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground tracking-tight">
+                    {service.title}
+                  </h3>
+                </div>
+
+                {/* Description */}
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-2">
+                  {service.desc}
+                </p>
+
+                {/* Key feature points */}
+                <ul className="mt-4 pt-4 border-t border-border space-y-2">
+                  {service.points.map((point) => (
+                    <li key={point} className="flex items-start gap-2 text-xs text-foreground">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Bottom CTA Link */}
+              <div className="mt-6 pt-4 border-t border-border">
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-primary/80 transition-colors"
+                >
+                  <span>Explore service specifications</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+            </div>
           ))}
         </div>
+
       </div>
     </section>
   );
 }
-
-function ServiceCard({
-  icon: Icon,
-  title,
-  desc,
-  primary,
-  delay = 0,
-}: {
-  icon: React.ComponentType<{ className?: string }>;
-  title: string;
-  desc: string;
-  primary?: boolean;
-  delay?: number;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const rectRef = useRef<DOMRect | null>(null);
-  const ticking = useRef(false);
-
-  const onEnter = () => {
-    if (ref.current) {
-      rectRef.current = ref.current.getBoundingClientRect();
-    }
-  };
-
-  const onMove = (e: React.MouseEvent) => {
-    if (!ticking.current && rectRef.current) {
-      window.requestAnimationFrame(() => {
-        const el = ref.current;
-        const r = rectRef.current;
-        if (!el || !r) return;
-        
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top) / r.height - 0.5;
-        el.style.transform = `perspective(1000px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg) translateY(-6px)`;
-        ticking.current = false;
-      });
-      ticking.current = true;
-    }
-  };
-
-  const onLeave = () => {
-    rectRef.current = null;
-    if (ref.current) {
-      ref.current.style.transform = "perspective(1000px) rotateX(0) rotateY(0) translateY(0)";
-    }
-  };
-
-  return (
-    <div
-      ref={ref}
-      onMouseEnter={onEnter}
-      onMouseMove={onMove}
-      onMouseLeave={onLeave}
-      style={{ animationDelay: `${delay}ms`, transition: "transform 300ms cubic-bezier(.2,.8,.2,1)" }}
-      className={`group relative glass rounded-3xl p-7 animate-fade-up overflow-hidden ${
-        primary ? "ring-1 ring-accent/40" : ""
-      }`}
-    >
-      {/* Glow */}
-      <div className={`absolute -top-20 -right-20 h-56 w-56 rounded-full blur-3xl opacity-0 group-hover:opacity-60 transition-opacity ${primary ? "bg-accent/40" : "bg-primary/40"}`} />
-
-      {primary && (
-        <div className="absolute top-5 right-5 text-[10px] uppercase tracking-wider text-accent border border-accent/40 rounded-full px-2 py-0.5">
-          Flagship
-        </div>
-      )}
-
-      <div className={`relative h-14 w-14 rounded-2xl flex items-center justify-center mb-5 ${
-        primary
-          ? "bg-gradient-to-br from-accent to-primary shadow-[var(--shadow-cyan)]"
-          : "bg-gradient-to-br from-primary/30 to-deep-blue/30 border border-white/10"
-      }`}>
-        <Icon className={`h-6 w-6 ${primary ? "text-background" : "text-accent"}`} />
-      </div>
-
-      <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
-      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{desc}</p>
-
-      <div className="mt-6 flex items-center text-sm text-accent opacity-0 group-hover:opacity-100 translate-x-[-4px] group-hover:translate-x-0 transition-all">
-        Learn more
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="ml-1">
-          <path d="M5 12h14M13 5l7 7-7 7" />
-        </svg>
-      </div>
-    </div>
-  );
-}
-

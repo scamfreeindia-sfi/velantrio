@@ -1,50 +1,89 @@
-import { Inbox, Cpu, ShieldCheck, Send } from "lucide-react";
+import { Inbox, Cpu, ShieldCheck, Send, CheckCircle2, ArrowRight } from "lucide-react";
 import { SectionHeader } from "./SectionHeader";
 
 const steps = [
-  { icon: Inbox, title: "Data Collection", desc: "Secure intake from your systems via API, SFTP, or portal." },
-  { icon: Cpu, title: "Validation & Processing", desc: "Automated + human-in-the-loop processing pipelines." },
-  { icon: ShieldCheck, title: "Quality Check", desc: "Multi-stage QA with statistical sampling and audits." },
-  { icon: Send, title: "Delivery", desc: "On-time delivery in your preferred format with reporting." },
+  { 
+    step: "01",
+    phase: "Phase 1: Week 1",
+    icon: Inbox, 
+    title: "Discovery & Security Protocol", 
+    desc: "We analyze your existing workflows, establish strict SLA parameters, sign mutual NDAs, and configure encrypted API/SFTP data intake channels.",
+    highlights: ["SLA & KPI benchmark definition", "Encrypted 256-bit data pipelines", "Mutual NDA & compliance sign-off"]
+  },
+  { 
+    step: "02",
+    phase: "Phase 2: Week 2",
+    icon: Cpu, 
+    title: "Parallel Pilot & QA Calibration", 
+    desc: "A controlled pilot phase is executed alongside your team to calibrate accuracy standards, benchmark turnaround, and train dedicated analysts.",
+    highlights: ["100% QA audit on pilot records", "Workflow & error-rate calibration", "Zero disruption to existing ops"]
+  },
+  { 
+    step: "03",
+    phase: "Phase 3: Ongoing",
+    icon: ShieldCheck, 
+    title: "Full-Scale 24/7 Operations", 
+    desc: "Live production shifts to our Mohali delivery hub with automated pipelines and dual-layer human verification running seamlessly around the clock.",
+    highlights: ["24/7/365 active shift coverage", "Dual analyst verification loop", "Real-time ticket & lead ingestion"]
+  },
+  { 
+    step: "04",
+    phase: "Phase 4: Governance",
+    icon: Send, 
+    title: "SLA Delivery & Reporting", 
+    desc: "Outputs are delivered on schedule with daily performance reports, statistical QA audits, and regular executive governance reviews.",
+    highlights: ["Daily accuracy scorecards", "Dedicated Account Manager", "Continuous efficiency optimization"]
+  },
 ];
 
 export function Process() {
   return (
-    <section id="process" className="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
-      <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent -translate-y-1/2" />
-
+    <section id="process" className="relative py-16 sm:py-24 lg:py-32 border-b border-border bg-card">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeader
-          eyebrow="How it works"
-          title={<>A <span className="text-gradient">workflow</span> built for clarity</>}
-          subtitle="Predictable, transparent, and continuously optimized."
+          eyebrow="Operational Blueprint"
+          title={<>A Structured, <span className="text-primary">Zero-Disruption</span> Onboarding</>}
+          subtitle="How we calibrate, onboard, and execute your operations with institutional precision and zero downtime."
         />
 
-        <div className="mt-16 relative">
-          {/* connecting line desktop */}
-          <div className="hidden lg:block absolute top-12 left-[12%] right-[12%] h-px bg-gradient-to-r from-primary/40 via-accent/60 to-primary/40" />
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {steps.map((s, i) => (
-              <div
-                key={s.title}
-                style={{ animationDelay: `${i * 120}ms` }}
-                className="relative animate-fade-up text-center"
-              >
-                <div className="relative mx-auto h-24 w-24">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-accent blur-2xl opacity-40 animate-glow-pulse" />
-                  <div className="relative h-24 w-24 rounded-full glass flex items-center justify-center border border-accent/30">
-                    <s.icon className="h-9 w-9 text-accent" />
-                    <div className="absolute -top-2 -right-2 h-7 w-7 rounded-full bg-gradient-to-br from-primary to-accent text-background text-xs font-bold flex items-center justify-center">
-                      {i + 1}
-                    </div>
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((s) => (
+            <div
+              key={s.step}
+              className="rounded-2xl border border-border bg-muted/20 p-6 sm:p-7 shadow-xs flex flex-col justify-between hover:border-primary/40 hover:bg-card hover:shadow-md transition-all duration-200"
+            >
+              <div>
+                {/* Header with step number & phase */}
+                <div className="flex items-center justify-between gap-2 mb-4">
+                  <div className="h-10 w-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0">
+                    <s.icon className="h-5 w-5" />
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[11px] font-mono font-bold text-muted-foreground">{s.phase}</span>
+                    <span className="text-xs font-bold font-mono text-primary px-2 py-0.5 rounded bg-primary/10 border border-primary/20">
+                      {s.step}
+                    </span>
                   </div>
                 </div>
-                <h3 className="mt-6 font-semibold tracking-tight">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">{s.desc}</p>
+
+                <h3 className="text-base font-bold text-foreground tracking-tight">
+                  {s.title}
+                </h3>
+                <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  {s.desc}
+                </p>
+
+                <ul className="mt-4 pt-4 border-t border-border space-y-2">
+                  {s.highlights.map((h) => (
+                    <li key={h} className="flex items-start gap-2 text-xs text-foreground">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

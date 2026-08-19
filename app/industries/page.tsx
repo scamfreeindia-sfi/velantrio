@@ -23,31 +23,32 @@ export default function IndustriesPage() {
       <main className="flex-grow pt-32 pb-16 sm:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeader
-            eyebrow="Our Expertise"
-            title={<>Tailored Solutions for <span className="text-gradient">Every Industry</span></>}
-            subtitle="Explore how Velantrio's specialized outsourcing services empower businesses across diverse sectors."
+            eyebrow="Sector Specializations"
+            title={<>Tailored Solutions for <span className="text-primary">Every Industry</span></>}
+            subtitle="Explore how Velantrio's dedicated operational pods empower global enterprises across specialized verticals."
           />
 
-          <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {industries.map((industry, i) => {
+          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {industries.map((industry) => {
               const Icon = industry.icon;
               return (
                 <Link
                   key={industry.slug}
                   href={`/industries/${industry.slug}`}
-                  style={{ animationDelay: `${i * 100}ms` }}
-                  className="group glass rounded-3xl p-8 animate-fade-up hover:border-accent/40 transition-all flex flex-col h-full"
+                  className="rounded-2xl border border-border bg-card p-7 shadow-xs hover:border-primary/40 hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
                 >
-                  <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <Icon className="h-6 w-6 text-accent" />
+                  <div>
+                    <div className="h-12 w-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-colors text-primary">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground tracking-tight group-hover:text-primary transition-colors">{industry.title}</h3>
+                    <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                      {industry.description}
+                    </p>
                   </div>
-                  <h3 className="text-2xl font-bold tracking-tight">{industry.title}</h3>
-                  <p className="mt-3 text-muted-foreground leading-relaxed flex-grow">
-                    {industry.description}
-                  </p>
-                  <div className="mt-8 flex items-center gap-2 text-sm font-semibold text-accent group-hover:gap-3 transition-all">
-                    Explore Solutions
-                    <ArrowRight className="h-4 w-4" />
+                  <div className="mt-6 pt-4 border-t border-border/60 flex items-center gap-1.5 text-xs font-semibold text-primary">
+                    <span>Explore sector blueprint</span>
+                    <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
               );

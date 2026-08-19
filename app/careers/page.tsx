@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { Header } from "@/app/Components/Header";
 import { Footer } from "@/app/Components/Footer";
 import { SectionHeader } from "@/app/Components/SectionHeader";
-import { Users, Heart, Zap, MapPin, ArrowRight } from "lucide-react";
+import { Users, Heart, Zap, MapPin, ArrowRight, Briefcase } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -11,33 +11,33 @@ export const metadata: Metadata = {
 };
 
 const benefits = [
-  { icon: Heart, title: "Health & Wellness", desc: "Comprehensive health insurance and wellness programs for you and your family." },
-  { icon: Zap, title: "Fast-Paced Growth", desc: "Clear career progression paths and continuous learning opportunities." },
-  { icon: Users, title: "Inclusive Culture", desc: "A diverse and inclusive environment where every voice is heard and valued." },
+  { icon: Heart, title: "Health & Wellness", desc: "Comprehensive health coverage, wellness stipends, and work-life balance initiatives." },
+  { icon: Zap, title: "Fast-Paced Growth", desc: "Clear career progression ladders, leadership training, and skill-building programs." },
+  { icon: Users, title: "Inclusive Culture", desc: "A meritocratic, supportive environment where operational excellence is recognized and rewarded." },
 ];
 
 const openRoles = [
   {
-    title: "Senior Customer Success Manager",
+    title: "Senior Operations Delivery Manager",
     department: "Operations",
+    location: "Mohali, India (On-site)",
+    type: "Full-time"
+  },
+  {
+    title: "Tele Data Quality Analyst",
+    department: "Quality Assurance",
+    location: "Mohali / Chandigarh (On-site)",
+    type: "Full-time"
+  },
+  {
+    title: "KPO Financial Research Analyst",
+    department: "Knowledge Services",
     location: "Mohali, India (Hybrid)",
     type: "Full-time"
   },
   {
-    title: "Data Quality Analyst",
-    department: "Quality Assurance",
-    location: "Chandigarh, India (On-site)",
-    type: "Full-time"
-  },
-  {
-    title: "Medical Billing Specialist",
-    department: "Healthcare Ops",
-    location: "Remote (India)",
-    type: "Full-time"
-  },
-  {
-    title: "B2B Sales Executive",
-    department: "Sales & Marketing",
+    title: "Enterprise Client Account Manager",
+    department: "Client Success",
     location: "Mohali, India (Hybrid)",
     type: "Full-time"
   }
@@ -51,47 +51,50 @@ export default function CareersPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeader
             eyebrow="Careers at Velantrio"
-            title={<>Build your future with <span className="text-gradient">us</span></>}
-            subtitle="We are always looking for driven, talented individuals to join our growing team and help us redefine global outsourcing."
+            title={<>Build Your Career with <span className="text-primary">Velantrio</span></>}
+            subtitle="Join our fast-growing delivery hub in Mohali. Work with global enterprise clients on high-impact data and outsourcing operations."
           />
 
           {/* Benefits Section */}
-          <div className="mt-16 grid sm:grid-cols-3 gap-6">
+          <div className="mt-14 grid sm:grid-cols-3 gap-6">
             {benefits.map((benefit, i) => {
               const Icon = benefit.icon;
               return (
-                <div key={i} className="glass rounded-3xl p-8 flex flex-col items-center text-center border border-white/5">
-                  <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-6">
-                    <Icon className="h-6 w-6 text-accent" />
+                <div key={i} className="rounded-2xl border border-border bg-card p-7 text-center shadow-xs">
+                  <div className="mx-auto h-12 w-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-4">
+                    <Icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-                  <p className="text-muted-foreground text-sm">{benefit.desc}</p>
+                  <h3 className="text-base font-bold text-foreground mb-2">{benefit.title}</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{benefit.desc}</p>
                 </div>
               );
             })}
           </div>
 
           {/* Open Roles Section */}
-          <div className="mt-24">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight">Open Roles</h2>
-              <p className="mt-4 text-muted-foreground">Don't see a fit? Send your resume to careers@velantrio.com</p>
+          <div className="mt-20">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">Current Open Positions</h2>
+              <p className="mt-2 text-sm text-muted-foreground">Don&apos;t see an exact match? Send your CV directly to <a href="mailto:careers@velantrio.com" className="text-primary font-semibold hover:underline">careers@velantrio.com</a></p>
             </div>
 
             <div className="space-y-4 max-w-4xl mx-auto">
               {openRoles.map((role, i) => (
-                <div key={i} className="group glass rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6 hover:border-accent/40 transition-all">
+                <div key={i} className="rounded-2xl border border-border bg-card p-6 sm:p-7 flex flex-col sm:flex-row sm:items-center justify-between gap-5 shadow-xs hover:border-primary/40 transition-all duration-200">
                   <div>
-                    <h3 className="text-xl font-semibold text-foreground group-hover:text-accent transition-colors">{role.title}</h3>
-                    <div className="mt-3 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                      <span className="flex items-center gap-1.5"><BriefcaseIcon className="h-4 w-4" /> {role.department}</span>
-                      <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4" /> {role.location}</span>
-                      <span className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs">{role.type}</span>
+                    <h3 className="text-lg font-bold text-foreground">{role.title}</h3>
+                    <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+                      <span className="flex items-center gap-1.5"><Briefcase className="h-3.5 w-3.5 text-primary" /> {role.department}</span>
+                      <span className="flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5 text-primary" /> {role.location}</span>
+                      <span className="px-2 py-0.5 rounded bg-muted border border-border text-foreground/80 font-medium">{role.type}</span>
                     </div>
                   </div>
-                  <Link href="/contact" className="shrink-0 inline-flex items-center justify-center gap-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 px-5 py-2.5 text-sm font-medium transition-colors">
-                    Apply Now
-                    <ArrowRight className="h-4 w-4" />
+                  <Link 
+                    href="/contact" 
+                    className="shrink-0 inline-flex items-center justify-center gap-2 rounded-lg bg-primary text-primary-foreground px-4 py-2.5 text-xs font-semibold hover:bg-primary/90 transition-colors shadow-2xs"
+                  >
+                    <span>Apply Now</span>
+                    <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
               ))}
@@ -101,14 +104,5 @@ export default function CareersPage() {
       </main>
       <Footer />
     </div>
-  );
-}
-
-function BriefcaseIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
-      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-    </svg>
   );
 }

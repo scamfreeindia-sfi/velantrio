@@ -15,14 +15,15 @@ export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow pt-20">
-        <div className="py-12 bg-muted/30">
+      <main className="flex-grow pt-24">
+        <div className="py-14 sm:py-18 border-b border-border bg-card">
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-gradient">
-              Our Services
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
+              Specialized <span className="text-primary">Outsourcing Services</span>
             </h1>
-            <p className="mt-6 text-lg text-muted-foreground max-w-3xl">
-              From Tele Data Validation to KPO and Back Office support, we offer a comprehensive suite of outsourcing solutions.
+            <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+              From high-accuracy Tele-Data Validation to financial KPO research, omnichannel BPO, and custom software pipelines, 
+              we deliver measurable accuracy and 40–60% operational savings.
             </p>
           </div>
         </div>

@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 };
 
 const categories = [
-  { name: "All", value: "all" },
-  { name: "Industry Articles", value: "articles" },
+  { name: "All Resources", value: "all" },
   { name: "Whitepapers", value: "whitepapers" },
   { name: "Outsourcing Guides", value: "guides" },
-  { name: "Company Updates", value: "updates" },
+  { name: "Industry Articles", value: "articles" },
+  { name: "Compliance Updates", value: "updates" },
 ];
 
 const resources = [
@@ -23,8 +23,8 @@ const resources = [
     type: "Whitepaper",
     category: "whitepapers",
     icon: Download,
-    title: "The Future of BPO: AI Integration & Automation",
-    desc: "Discover how artificial intelligence is transforming traditional BPO operations and what it means for your business.",
+    title: "The Future of BPO: AI Integration & Human QA Benchmarks",
+    desc: "How dual-layer verification models outperform pure AI or pure manual data operations in enterprise accuracy and cost savings.",
     date: "Aug 12, 2026",
     readTime: "15 min read"
   },
@@ -32,8 +32,8 @@ const resources = [
     type: "Guide",
     category: "guides",
     icon: BookOpen,
-    title: "Complete Guide to Medical Billing Outsourcing",
-    desc: "A comprehensive checklist and guide for healthcare providers looking to partner with a billing BPO.",
+    title: "Complete Guide to Healthcare & Medical Billing Outsourcing",
+    desc: "A comprehensive checklist for healthcare systems looking to eliminate billing backlogs and ensure HIPAA compliance.",
     date: "Jul 28, 2026",
     readTime: "10 min read"
   },
@@ -41,8 +41,8 @@ const resources = [
     type: "Article",
     category: "articles",
     icon: FileText,
-    title: "5 Hidden Costs of In-House Data Entry Teams",
-    desc: "Why scaling an internal data entry team might be costing you more than you realize, and how to optimize.",
+    title: "5 Hidden Operational Costs of In-House Data Validation",
+    desc: "Why scaling internal validation teams incurs high attrition, infrastructure drag, and supervisory overhead.",
     date: "Jul 15, 2026",
     readTime: "6 min read"
   },
@@ -50,8 +50,8 @@ const resources = [
     type: "Update",
     category: "updates",
     icon: Bell,
-    title: "Velantrio Adopts ISO/IEC 27001 Aligned Processes",
-    desc: "We are proud to announce our latest milestone in adopting information security best practices and aligning our operations.",
+    title: "Velantrio Adopts ISO/IEC 27001 Aligned Security Frameworks",
+    desc: "An overview of our updated information security protocols, clean-desk policy, and physical security measures at our Mohali hub.",
     date: "Jun 30, 2026",
     readTime: "3 min read"
   },
@@ -59,8 +59,8 @@ const resources = [
     type: "Guide",
     category: "guides",
     icon: BookOpen,
-    title: "SLA Optimization: Best Practices for Procurement",
-    desc: "How procurement teams can structure SLAs with outsourcing vendors to guarantee performance and compliance.",
+    title: "SLA Structuring: Best Practices for Procurement Teams",
+    desc: "How operations and procurement leaders structure vendor SLAs to guarantee measurable accuracy and turnaround.",
     date: "Jun 14, 2026",
     readTime: "8 min read"
   },
@@ -68,8 +68,8 @@ const resources = [
     type: "Article",
     category: "articles",
     icon: FileText,
-    title: "Navigating GDPR Compliance with Remote Teams",
-    desc: "A strategic overview of maintaining data privacy when working with global distributed teams.",
+    title: "Navigating GDPR Compliance with Offshore Delivery Hubs",
+    desc: "A strategic overview of maintaining rigorous data sovereignty, encryption standards, and auditor access.",
     date: "May 22, 2026",
     readTime: "5 min read"
   }
@@ -82,61 +82,60 @@ export default function ResourcesPage() {
       <main className="flex-grow pt-32 pb-16 sm:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeader
-            eyebrow="Resources Hub"
-            title={<>Insights & <span className="text-gradient">Knowledge</span></>}
-            subtitle="Explore our library of articles, whitepapers, and guides designed to help you optimize your outsourcing strategy."
+            eyebrow="Resources & Guides"
+            title={<>Operational Knowledge & <span className="text-primary">Executive Guides</span></>}
+            subtitle="Explore our library of whitepapers, SLA blueprints, and case analysis designed for operations directors and COOs."
           />
 
-          {/* Category Filter (Visual only for mockup) */}
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
+          {/* Category Filter */}
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
             {categories.map((c, i) => (
-              <button
+              <span
                 key={c.value}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all cursor-pointer ${
                   i === 0 
-                    ? "bg-accent text-white shadow-[0_0_20px_rgba(var(--accent),0.3)]" 
-                    : "glass text-muted-foreground hover:text-foreground hover:border-white/20"
+                    ? "bg-primary text-primary-foreground border-primary shadow-xs" 
+                    : "bg-card text-foreground/80 border-border hover:bg-muted"
                 }`}
               >
                 {c.name}
-              </button>
+              </span>
             ))}
           </div>
 
-          <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {resources.map((res, i) => {
+          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {resources.map((res) => {
               const Icon = res.icon;
               return (
-                <Link
-                  href="#"
+                <div
                   key={res.title}
-                  style={{ animationDelay: `${i * 100}ms` }}
-                  className="group glass rounded-3xl p-6 sm:p-8 animate-fade-up hover:border-accent/40 transition-all flex flex-col h-full relative overflow-hidden"
+                  className="rounded-2xl border border-border bg-card p-6 sm:p-7 shadow-xs hover:border-primary/40 hover:shadow-md transition-all duration-200 flex flex-col justify-between"
                 >
-                  <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-foreground">
-                      <Icon className="h-3 w-3" />
-                      {res.type}
-                    </span>
-                    <span className="text-xs text-muted-foreground">{res.readTime}</span>
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary">
+                        <Icon className="h-3 w-3" />
+                        {res.type}
+                      </span>
+                      <span className="text-[11px] text-muted-foreground font-mono">{res.readTime}</span>
+                    </div>
+
+                    <h3 className="text-base font-bold tracking-tight text-foreground mb-2 leading-snug">
+                      {res.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                      {res.desc}
+                    </p>
                   </div>
 
-                  <h3 className="text-xl font-bold tracking-tight mb-3 group-hover:text-accent transition-colors">
-                    {res.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow">
-                    {res.desc}
-                  </p>
-
-                  <div className="pt-6 border-t border-white/5 flex items-center justify-between text-sm">
+                  <div className="pt-5 mt-6 border-t border-border flex items-center justify-between text-xs">
                     <span className="text-muted-foreground">{res.date}</span>
-                    <span className="text-accent font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                      Read more <ArrowRight className="h-4 w-4" />
-                    </span>
+                    <Link href="/contact" className="text-primary font-semibold inline-flex items-center gap-1 hover:underline">
+                      <span>Access report</span>
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </Link>
                   </div>
-                </Link>
+                </div>
               );
             })}
           </div>

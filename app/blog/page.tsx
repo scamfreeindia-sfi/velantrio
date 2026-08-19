@@ -4,7 +4,6 @@ import { Footer } from "@/app/Components/Footer";
 import { SectionHeader } from "@/app/Components/SectionHeader";
 import Link from "next/link";
 import { ArrowRight, Calendar, User } from "lucide-react";
-
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -23,46 +22,44 @@ export default function BlogPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeader
             eyebrow="Knowledge Base"
-            title={<>Industry <span className="text-gradient">Insights</span></>}
-            subtitle="Explore our latest articles on how to optimize your business operations and scale globally."
+            title={<>Industry <span className="text-primary">Insights & Analysis</span></>}
+            subtitle="Explore our latest strategic articles on optimizing back-office operations, QA calibration, and global scale."
           />
 
-          <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            {blogPosts.map((post, i) => (
+          <div className="mt-14 grid md:grid-cols-2 gap-8">
+            {blogPosts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                style={{ animationDelay: `${i * 100}ms` }}
-                className="group glass rounded-3xl overflow-hidden flex flex-col md:flex-row h-full animate-fade-up border-white/5 hover:border-accent/30 transition-all"
+                className="rounded-2xl border border-border bg-card overflow-hidden shadow-xs hover:border-primary/40 hover:shadow-md transition-all duration-200 flex flex-col justify-between group p-6 sm:p-8"
               >
-                <div className="md:w-2/5 relative h-64 md:h-auto overflow-hidden">
-                   <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-accent/40 group-hover:scale-110 transition-transform duration-500" />
-                   <div className="absolute inset-0 flex items-center justify-center text-white/20 font-bold text-4xl">
-                     {post.category}
-                   </div>
-                </div>
-                <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex items-center gap-4 text-xs font-semibold text-accent uppercase tracking-wider mb-4">
-                    <span className="glass px-2 py-1 rounded-md">{post.category}</span>
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
+                      {post.category}
+                    </span>
+                    <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                      <Calendar className="h-3 w-3" />
+                      {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                    </span>
                   </div>
-                  <h2 className="text-2xl font-bold tracking-tight group-hover:text-accent transition-colors">
+
+                  <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors leading-snug">
                     {post.title}
                   </h2>
-                  <p className="mt-3 text-muted-foreground leading-relaxed flex-grow">
+                  <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed">
                     {post.description}
                   </p>
-                  <div className="mt-6 flex items-center justify-between text-sm text-muted-foreground pt-6 border-t border-white/5">
-                    <div className="flex items-center gap-4">
-                      <span className="flex items-center gap-1.5">
-                        <Calendar className="h-4 w-4" />
-                        {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                      </span>
-                      <span className="flex items-center gap-1.5">
-                        <User className="h-4 w-4" />
-                        {post.author}
-                      </span>
-                    </div>
-                    <ArrowRight className="h-5 w-5 text-accent group-hover:translate-x-1 transition-transform" />
+                </div>
+
+                <div className="mt-6 pt-5 border-t border-border flex items-center justify-between text-xs text-muted-foreground">
+                  <div className="flex items-center gap-1.5 font-medium">
+                    <User className="h-3.5 w-3.5 text-primary" />
+                    <span>By {post.author}</span>
+                  </div>
+                  <div className="flex items-center gap-1 font-semibold text-primary">
+                    <span>Read full article</span>
+                    <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </Link>

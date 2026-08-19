@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Header } from "../Components/Header";
 import { Footer } from "../Components/Footer";
+import { ShieldCheck, Lock, Eye, Database } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Security & Compliance | Velantrio",
@@ -9,7 +10,6 @@ export const metadata: Metadata = {
     canonical: "/security/",
   },
 };
-import { ShieldCheck, Lock, Eye, Database, Globe } from "lucide-react";
 
 export default function SecurityPage() {
   return (
@@ -17,55 +17,57 @@ export default function SecurityPage() {
       <Header />
       <main className="flex-grow pt-32 pb-16 sm:pb-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-gradient">Security & Compliance</h1>
-          <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            Data security is at the core of everything we do at Velantrio. We implement enterprise-grade security protocols to ensure your sensitive information remains protected, private, and compliant.
-          </p>
+          <div className="border-b border-border pb-8">
+            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">Security & Data Governance</h1>
+            <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+              Information security is the foundational pillar of Velantrio. We implement enterprise-grade protocols to ensure all client data remains strictly confidential, tamper-proof, and fully compliant with global standards.
+            </p>
+          </div>
 
-          <div className="mt-16 grid sm:grid-cols-2 gap-6">
+          <div className="mt-12 grid sm:grid-cols-2 gap-6">
             <SecurityCard 
               icon={ShieldCheck} 
-              title="ISO 27001 Standard" 
-              desc="We follow the ISO/IEC 27001 information security management system standards to manage risks." 
+              title="ISO/IEC 27001 Standard" 
+              desc="We follow ISO/IEC 27001 information security management protocols with regular vulnerability assessments and audits." 
             />
             <SecurityCard 
               icon={Lock} 
-              title="End-to-End Encryption" 
-              desc="All data in transit and at rest is protected using industry-standard AES-256 encryption." 
+              title="AES-256 Encryption" 
+              desc="All data in transit (TLS 1.3) and at rest is secured using military-grade 256-bit encryption with key rotation." 
             />
             <SecurityCard 
               icon={Eye} 
-              title="Access Control" 
-              desc="Strict Role-Based Access Control (RBAC) ensures only authorized personnel can access specific data." 
+              title="Role-Based Access Control" 
+              desc="Strict Least-Privilege access principles ensure only designated analysts can view authorized project partitions." 
             />
             <SecurityCard 
               icon={Database} 
-              title="Secure Infrastructure" 
-              desc="Our servers are hosted in SOC 2 Type II compliant data centers with 24/7 physical security." 
+              title="Hardened Delivery Infrastructure" 
+              desc="Delivery nodes are hosted in SOC 2 Type II compliant environments with 24/7 physical access controls." 
             />
           </div>
 
-          <div className="mt-20 space-y-10 text-muted-foreground leading-relaxed">
-            <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">Regulatory Compliance</h2>
+          <div className="mt-16 space-y-8 text-muted-foreground leading-relaxed text-sm">
+            <section className="rounded-2xl border border-border bg-card p-6 sm:p-7 shadow-xs">
+              <h2 className="text-lg font-bold text-foreground mb-2">Regulatory Compliance</h2>
               <p>
-                Velantrio maintains compliance with global data protection regulations, including GDPR for European data and HIPAA guidelines for healthcare-related operations. We regularly conduct internal audits to ensure our processes meet or exceed these standards.
+                Velantrio maintains compliance with international data protection frameworks, including GDPR for European clients and HIPAA guidelines for healthcare operations. We conduct regular compliance reviews to maintain institutional audit readiness.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">Employee Training</h2>
+            <section className="rounded-2xl border border-border bg-card p-6 sm:p-7 shadow-xs">
+              <h2 className="text-lg font-bold text-foreground mb-2">Personnel Screening & Training</h2>
               <p>
-                Every member of the Velantrio team undergoes rigorous security awareness training. We foster a culture of security where every employee understands their role in maintaining data integrity.
+                Every employee undergoes background verification and mandatory confidentiality training before accessing any operational system. Clean-desk policies and zero-recording rules are strictly enforced across our delivery floor.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">Reporting a Vulnerability</h2>
+            <section className="rounded-2xl border border-border bg-card p-6 sm:p-7 shadow-xs">
+              <h2 className="text-lg font-bold text-foreground mb-2">Security Point of Contact</h2>
               <p>
-                If you believe you have discovered a security vulnerability on our Website or Services, please report it to our security team immediately at:
+                For security inquiries, audit requests, or vulnerability disclosures, contact our security officer directly at:
                 <br />
-                <span className="text-accent font-semibold">security@velantrio.com</span>
+                <a href="mailto:security@velantrio.com" className="text-primary font-semibold hover:underline mt-1 inline-block">security@velantrio.com</a>
               </p>
             </section>
           </div>
@@ -76,14 +78,14 @@ export default function SecurityPage() {
   );
 }
 
-function SecurityCard({ icon: Icon, title, desc }: { icon: any, title: string, desc: string }) {
+function SecurityCard({ icon: Icon, title, desc }: { icon: React.ComponentType<{ className?: string }>, title: string, desc: string }) {
   return (
-    <div className="glass rounded-3xl p-7 border border-white/5 group hover:border-accent/30 transition-all">
-      <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-        <Icon className="h-6 w-6 text-accent" />
+    <div className="rounded-2xl border border-border bg-card p-6 shadow-xs hover:border-primary/40 transition-all duration-200">
+      <div className="h-10 w-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-4">
+        <Icon className="h-5 w-5" />
       </div>
-      <h3 className="text-xl font-bold text-foreground mb-2">{title}</h3>
-      <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+      <h3 className="text-base font-bold text-foreground mb-1.5">{title}</h3>
+      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{desc}</p>
     </div>
   );
 }

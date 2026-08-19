@@ -15,14 +15,15 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow pt-20">
-        <div className="py-12 bg-muted/30">
+      <main className="flex-grow pt-24">
+        <div className="py-14 sm:py-18 border-b border-border bg-card">
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-gradient">
-              About Velantrio
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
+              About <span className="text-primary">Velantrio</span>
             </h1>
-            <p className="mt-6 text-lg text-muted-foreground max-w-3xl">
-              We are a global leader in specialized outsourcing, providing high-accuracy data validation and knowledge process solutions.
+            <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+              We are an enterprise outsourcing and data operations company based in Mohali & Chandigarh, 
+              providing guaranteed-accuracy tele-data validation, voice/non-voice support, and KPO research solutions.
             </p>
           </div>
         </div>

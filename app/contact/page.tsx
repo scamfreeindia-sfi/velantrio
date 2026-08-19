@@ -15,14 +15,15 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow pt-20">
-        <div className="py-12 bg-muted/30">
+      <main className="flex-grow pt-24">
+        <div className="py-14 sm:py-18 border-b border-border bg-card">
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-gradient">
-              Contact Us
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
+              Contact <span className="text-primary">Our Delivery Center</span>
             </h1>
-            <p className="mt-6 text-lg text-muted-foreground max-w-3xl">
-              Get in touch with our experts to discuss how we can help your business scale.
+            <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+              Connect directly with our operations team in Mohali to discuss your project requirements, 
+              request SLA specs, or schedule an operational discovery session.
             </p>
           </div>
         </div>
