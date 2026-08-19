@@ -55,7 +55,7 @@ export function Footer() {
                   Velantrio
                 </span>
                 <span className="text-[10px] text-muted-foreground font-semibold uppercase tracking-wider -mt-0.5">
-                  Ventures Pvt. Ltd.
+                  Ventures
                 </span>
               </div>
             </Link>
