@@ -16,9 +16,9 @@ import {
 } from "lucide-react";
 
 const stats = [
-  { value: 99.85, suffix: "%", label: "Data Accuracy SLA", sub: "Multi-stage verification" },
+  { value: 95.4, suffix: "%", label: "Data Accuracy SLA", sub: "Multi-stage verification" },
   { value: 140, suffix: "+", label: "Global Clients", sub: "US, UK, EU & India" },
-  { value: 850, suffix: "+", label: "Projects Delivered", sub: "Zero SLA breaches" },
+  { value: 450, suffix: "+", label: "Projects Delivered", sub: "Zero SLA breaches" },
   { value: 24, suffix: "/7", label: "Active Operations", sub: "Round-the-clock hub" },
 ];
 
@@ -92,7 +92,7 @@ export function About() {
   }, []);
 
   return (
-    <section id="about" className="relative py-16 sm:py-24 lg:py-32 border-b border-border bg-card">
+    <section id="about" className="relative py-12 sm:py-16 lg:py-20 border-b border-border bg-card">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         
         {/* Top Split Section: Story + Stats */}

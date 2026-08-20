@@ -7,7 +7,7 @@ export function BlogSection() {
   const latestPosts = blogPosts.slice(0, 3);
 
   return (
-    <section className="py-16 sm:py-24 lg:py-32 border-b border-border bg-muted/20" id="blog">
+    <section className="py-12 sm:py-16 lg:py-20 border-b border-border bg-muted/20" id="blog">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeader
           eyebrow="Industry Analysis & Strategy"

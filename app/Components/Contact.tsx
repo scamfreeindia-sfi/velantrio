@@ -9,7 +9,7 @@ export function Contact() {
   const [service, setService] = useState("tele-validation");
 
   return (
-    <section id="contact" className="relative py-16 sm:py-24 lg:py-32 border-b border-border bg-card">
+    <section id="contact" className="relative py-12 sm:py-16 lg:py-20 border-b border-border bg-card">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeader
           eyebrow="Direct Operations Intake"

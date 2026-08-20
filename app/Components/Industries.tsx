@@ -15,7 +15,7 @@ const items = [
 
 export function Industries() {
   return (
-    <section id="industries" className="relative py-16 sm:py-24 lg:py-32 border-b border-border bg-muted/20">
+    <section id="industries" className="relative py-12 sm:py-16 lg:py-20 border-b border-border bg-muted/20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeader
           eyebrow="Sector Specializations"

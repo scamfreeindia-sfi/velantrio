@@ -74,13 +74,12 @@ export function Header() {
         >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative h-9 w-9 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center p-1 overflow-hidden transition-colors group-hover:border-primary/40">
+            <div className="relative h-9 w-9 rounded-xl overflow-hidden shrink-0 border border-border/80 shadow-2xs group-hover:border-primary/50 transition-colors">
               <Image
                 src="/logo.png"
                 alt="Velantrio"
-                width={28}
-                height={28}
-                className="object-contain"
+                fill
+                className="object-cover"
                 priority
               />
             </div>
@@ -95,7 +94,7 @@ export function Header() {
                 </span>
               </div>
               <span className="text-[11px] text-muted-foreground font-medium -mt-0.5">
-                BPO, KPO & Data Operations
+                BPO, KPO & Software Solutions
               </span>
             </div>
           </Link>

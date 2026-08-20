@@ -1,9 +1,9 @@
-import { 
-  Workflow, 
-  Database, 
-  TrendingDown, 
-  ShieldCheck, 
-  Landmark, 
+import {
+  Workflow,
+  Database,
+  TrendingDown,
+  ShieldCheck,
+  Landmark,
   CheckCircle2,
   Users2,
   Check,
@@ -12,41 +12,41 @@ import {
 import { SectionHeader } from "./SectionHeader";
 
 const features = [
-  { 
-    icon: Workflow, 
+  {
+    icon: Workflow,
     badge: "Transition Protocol",
-    title: "Zero-Disruption Migration Blueprint", 
-    desc: "A proven 4-stage migration protocol (Discovery, Parallel Pilot, Quality Calibration, Full Go-Live) guaranteeing zero downtime for critical workflows." 
+    title: "Zero-Disruption Migration Blueprint",
+    desc: "A proven 4-stage migration protocol (Discovery, Parallel Pilot, Quality Calibration, Full Go-Live) guaranteeing zero downtime for critical workflows."
   },
-  { 
-    icon: TrendingDown, 
+  {
+    icon: TrendingDown,
     badge: "Cost Reduction",
-    title: "40–60% Direct Operational Savings", 
-    desc: "Significantly lower your overhead while retaining final decision authority, audit rights, and real-time SLA transparency." 
+    title: "40–60% Direct Operational Savings",
+    desc: "Significantly lower your overhead while retaining final decision authority, audit rights, and real-time SLA transparency."
   },
-  { 
-    icon: ShieldCheck, 
+  {
+    icon: ShieldCheck,
     badge: "Information Security",
-    title: "ISO 27001 & SOC 2 Governance", 
-    desc: "Strict data confidentiality, clean-desk policy, role-based access control, and complete alignment with GDPR and international data standards." 
+    title: "ISO 27001 & SOC 2 Governance",
+    desc: "Strict data confidentiality, clean-desk policy, role-based access control, and complete alignment with GDPR and international data standards."
   },
-  { 
-    icon: Database, 
+  {
+    icon: Database,
     badge: "Quality Benchmark",
-    title: "99.85% Data Accuracy SLA", 
-    desc: "Dual-layer human validation combined with verification algorithms ensures invalid records and fraudulent entries are filtered out." 
+    title: "95.4% Data Accuracy SLA",
+    desc: "Dual-layer human validation combined with verification algorithms ensures invalid records and fraudulent entries are filtered out."
   },
-  { 
-    icon: Landmark, 
+  {
+    icon: Landmark,
     badge: "Accountability",
-    title: "Dedicated Operational Pods", 
-    desc: "Named Account Directors and daily QA reporting ensure consistent alignment with your operational KPIs and organizational milestones." 
+    title: "Dedicated Operational Pods",
+    desc: "Named Account Directors and daily QA reporting ensure consistent alignment with your operational KPIs and organizational milestones."
   },
-  { 
-    icon: Users2, 
+  {
+    icon: Users2,
     badge: "Delivery Facility",
-    title: "Skilled Domain Talent in Mohali", 
-    desc: "Direct access to educated, fluent professionals trained specifically in international BPO, financial analysis, and customer care." 
+    title: "Skilled Domain Talent in Mohali",
+    desc: "Direct access to educated, fluent professionals trained specifically in international BPO, financial analysis, and customer care."
   },
 ];
 
@@ -59,7 +59,7 @@ const comparisons = [
   {
     metric: "Data Accuracy & QA SLA",
     inHouse: "Variable (dependent on internal turnover)",
-    velantrio: "Contractually guaranteed 99.85% multi-stage QA",
+    velantrio: "Contractually guaranteed 95.4% multi-stage QA",
   },
   {
     metric: "Cost & Overhead Structure",
@@ -71,11 +71,7 @@ const comparisons = [
     inHouse: "Standard 8-hour single shift",
     velantrio: "24/7/365 continuous multi-shift production",
   },
-  {
-    metric: "Security & Compliance Audits",
-    inHouse: "Requires dedicated internal compliance staff",
-    velantrio: "ISO 27001, SOC 2, and GDPR-ready built-in",
-  },
+ 
   {
     metric: "Scale Elasticity",
     inHouse: "Slow, expensive hiring or painful layoffs",
@@ -85,7 +81,7 @@ const comparisons = [
 
 export function WhyUs() {
   return (
-    <section id="why" className="relative py-16 sm:py-24 lg:py-32 border-b border-border bg-muted/20">
+    <section id="why" className="relative py-12 sm:py-16 lg:py-20 border-b border-border bg-muted/20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeader
           eyebrow="The Velantrio Advantage"

@@ -41,13 +41,12 @@ export function Footer() {
           {/* Company Brief Column */}
           <div className="md:col-span-4 space-y-4">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative h-9 w-9 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center p-1 overflow-hidden">
+              <div className="relative h-9 w-9 rounded-xl overflow-hidden shrink-0 border border-border/80 shadow-2xs group-hover:border-primary/50 transition-colors">
                 <Image
                   src="/logo.png"
                   alt="Velantrio"
-                  width={28}
-                  height={28}
-                  className="object-contain"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <div className="flex flex-col">

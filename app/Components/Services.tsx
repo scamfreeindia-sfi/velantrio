@@ -1,71 +1,83 @@
 "use client";
 
 import Link from "next/link";
-import { 
-  Phone, 
-  Headphones, 
-  MessageSquare, 
-  Database, 
-  BarChart3, 
-  Banknote, 
-  ShieldCheck, 
-  Code2, 
+import {
+  Phone,
+  Headphones,
+  MessageSquare,
+  Database,
+  BarChart3,
+  Banknote,
+  ShieldCheck,
+  Code2,
   ArrowRight,
   CheckCircle2,
   Sparkles,
   Search,
   Check,
   XCircle,
-  FileCheck
+  FileCheck,
+  Truck
 } from "lucide-react";
 import { SectionHeader } from "./SectionHeader";
 
 const specializedServices = [
-  { 
-    icon: BarChart3, 
-    title: "KPO & Financial Research", 
+  {
+    icon: BarChart3,
+    title: "KPO & Financial Research",
     category: "Knowledge Services",
     sla: "Analyst-Grade Output",
     desc: "Rigorous financial modeling, quantitative data aggregation, competitor intelligence, and specialized industry briefs.",
     points: ["Secondary market research", "Financial spreading & modeling", "Regulatory compliance tracking"],
   },
-  { 
-    icon: Phone, 
-    title: "Inbound & Outbound Voice BPO", 
+  {
+    icon: Phone,
+    title: "Inbound & Outbound Voice BPO",
     category: "Customer Operations",
     sla: "24/7/365 Active",
     desc: "Trained voice professionals managing customer inquiries, escalations, lead verification, and appointment setting.",
     points: ["Native fluency across global accents", "Omnichannel CRM integration", "100% call recording & QA scoring"],
   },
-  { 
-    icon: MessageSquare, 
-    title: "Non-Voice & Omnichannel Support", 
+  {
+    icon: MessageSquare,
+    title: "Non-Voice & Omnichannel Support",
     category: "Customer Operations",
     sla: "< 15 Min First Response",
     desc: "High-speed email, live chat, and ticketing support across Zendesk, Freshdesk, Salesforce, and custom CRM systems.",
     points: ["Multi-tier technical assistance", "High-volume ticket resolution", "Detailed CSAT & SLA metrics"],
   },
-  { 
-    icon: Banknote, 
-    title: "Loan & Mortgage Processing", 
+  {
+    icon: Banknote,
+    title: "Loan & Mortgage Processing",
     category: "Financial Back Office",
     sla: "Fast-Track Turnaround",
     desc: "End-to-end documentation intake, identity verification, income scrubbing, and title review to speed up underwriting.",
     points: ["Document classification & OCR review", "Underwriting data preparation", "Strict PCI & financial compliance"],
   },
-  { 
-    icon: Code2, 
-    title: "Web & Custom Automation Solutions", 
+  {
+    icon: Code2,
+    title: "Web & Custom Automation Solutions",
     category: "Technology",
     sla: "Full-Stack Agile",
     desc: "Enterprise web platforms, internal automation workflows, portal dashboards, and API integrations built securely.",
-    points: ["Next.js & React architectures", "Automated data pipelines & APIs", "Enterprise security compliance"],
+    points: ["PHP Laravel, Node.js, Python & Django DRF", "Full-stack web & REST API development", "Automated data pipelines & enterprise security"],
+  },
+  {
+    icon: Truck,
+    title: "Logistics",
+    category: "Logistics & Operations",
+    sla: "24/7 Tracking & Support",
+    desc: "End-to-end freight tracking, dispatch management, bill of lading validation, and inventory back-office support.",
+    points: [
+      "Freight tracking & real-time dispatch",
+      "Bill of Lading & document processing",
+    ],
   },
 ];
 
 export function Services() {
   return (
-    <section id="services" className="relative py-16 sm:py-24 lg:py-32 border-b border-border bg-card">
+    <section id="services" className="relative py-12 sm:py-16 lg:py-20 border-b border-border bg-card">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeader
           eyebrow="Specialized Capabilities"
@@ -76,7 +88,7 @@ export function Services() {
         {/* Featured Flagship Hero Card: Tele Data Validation */}
         <div className="mt-14 rounded-2xl border border-primary/30 bg-muted/30 p-6 sm:p-10 shadow-xs">
           <div className="grid lg:grid-cols-12 gap-8 items-center">
-            
+
             {/* Left Info */}
             <div className="lg:col-span-7 space-y-4">
               <div className="flex items-center gap-2">
@@ -84,25 +96,25 @@ export function Services() {
                   Flagship Capability
                 </span>
                 <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
-                  99.85% Accuracy SLA
+                  95.4% Accuracy SLA
                 </span>
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
-                Tele Data Validation & Lead Scrubbing Engine
+                Enterprise BPO, KPO & Data Solutions
               </h3>
 
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Eliminate invalid contacts, bad addresses, and fraudulent leads before they hit your sales or underwriting queue. 
-                Our multi-point verification protocol validates phone connectivity, email deliverability, business tax IDs, and identity registries in real time.
+                End-to-end voice & non-voice customer support, financial research, data validation, and back-office operations tailored for high-growth businesses and global enterprises.
+                We combine domain-trained specialists with real-time QA governance to guarantee 99.8%+ SLA compliance.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-3 pt-2">
                 {[
-                  "Active phone line & carrier validation",
-                  "Postal & address normalization",
-                  "Corporate registry & GSTIN cross-checks",
-                  "Direct bidirectional CRM synchronization",
+                  "24/7 Voice & Omnichannel Customer Support",
+                  "KPO Financial Modeling & Market Research",
+                  "High-Accuracy Tele-Data Scrubbing & Validation",
+                  "Seamless CRM Integration & Audit Governance",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-2 text-xs font-semibold text-foreground">
                     <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
@@ -116,7 +128,7 @@ export function Services() {
                   href="/services"
                   className="inline-flex items-center gap-2 rounded-lg bg-primary text-primary-foreground px-5 py-2.5 text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-colors shadow-2xs"
                 >
-                  <span>Explore Tele-Validation Specs</span>
+                  <span>Explore BPO & KPO Solutions</span>
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
