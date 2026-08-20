@@ -113,17 +113,7 @@ export function About() {
               stringent data protection. We treat every client record as our own competitive advantage.
             </p>
 
-            <div className="pt-2 flex flex-wrap gap-2.5">
-              {["ISO/IEC 27001:2022", "SOC 2 Type II Aligned", "GDPR Ready", "Strict NDA Protocols"].map((b) => (
-                <span 
-                  key={b} 
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-muted/60 px-3 py-1.5 text-xs font-semibold text-foreground/85 shadow-2xs"
-                >
-                  <ShieldCheck className="h-3.5 w-3.5 text-primary shrink-0" />
-                  {b}
-                </span>
-              ))}
-            </div>
+            
           </div>
 
           <div ref={ref} className="lg:col-span-6 grid grid-cols-2 gap-4">
