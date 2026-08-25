@@ -27,7 +27,7 @@ const features = [
   {
     icon: ShieldCheck,
     badge: "Information Security",
-    title: "ISO 27001 & SOC 2 Governance",
+    title: "Governance",
     desc: "Strict data confidentiality, clean-desk policy, role-based access control, and complete alignment with GDPR and international data standards."
   },
   {

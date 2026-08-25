@@ -80,35 +80,7 @@ export function Contact() {
               onSubmit={(e) => { e.preventDefault(); setSent(true); }}
               className="space-y-5"
             >
-              <div>
-                <label className="block text-xs font-bold text-foreground mb-2">
-                  Select Primary Service of Interest
-                </label>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                  {[
-                    { id: "tele-validation", label: "Tele Data Validation" },
-                    { id: "voice-bpo", label: "Voice Operations" },
-                    { id: "non-voice", label: "Non-Voice & Chat" },
-                    { id: "kpo-research", label: "KPO & Research" },
-                    { id: "back-office", label: "Back Office & Loans" },
-                    { id: "custom", label: "Custom Solution" },
-                  ].map((s) => (
-                    <button
-                      key={s.id}
-                      type="button"
-                      onClick={() => setService(s.id)}
-                      className={`text-left px-3 py-2.5 rounded-lg text-xs font-semibold border transition-all cursor-pointer ${
-                        service === s.id
-                          ? "border-primary bg-primary/10 text-primary font-bold shadow-2xs"
-                          : "border-border bg-card text-muted-foreground hover:bg-muted"
-                      }`}
-                    >
-                      {s.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
+         
               <div className="grid sm:grid-cols-2 gap-4">
                 <FormField label="Full Name" name="name" placeholder="Velantrio Ventures" required />
                 <FormField label="Corporate Work Email" name="email" type="email" placeholder="info@velantrio.com" required />
