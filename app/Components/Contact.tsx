@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Mail, MapPin, Phone, FileText, Clock, ShieldCheck, CheckCircle2, ArrowRight } from "lucide-react";
 import { SectionHeader } from "./SectionHeader";
+import { OfficeGallery } from "./OfficeGallery";
 
 export function Contact() {
   const [sent, setSent] = useState(false);
@@ -127,6 +128,15 @@ export function Contact() {
             </form>
           </div>
 
+        </div>
+
+        {/* Office Photos Section */}
+        <div className="mt-16 sm:mt-20 pt-16 border-t border-border">
+          <OfficeGallery
+            eyebrow="Our Physical Facility"
+            title={<>Inside Our <span className="text-primary">Mohali Operations Hub</span></>}
+            subtitle="Take a look at the actual delivery center where our operations teams, data analysts, and executive leadership operate 24 hours a day."
+          />
         </div>
       </div>
     </section>

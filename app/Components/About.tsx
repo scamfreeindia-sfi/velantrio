@@ -14,6 +14,7 @@ import {
   MapPin,
   FileCheck
 } from "lucide-react";
+import { OfficeGallery } from "./OfficeGallery";
 
 const stats = [
   { value: 95.4, suffix: "%", label: "Data Accuracy SLA", sub: "Multi-stage verification" },
@@ -162,6 +163,11 @@ export function About() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Office Photo Gallery */}
+        <div className="mt-16 sm:mt-20">
+          <OfficeGallery />
         </div>
 
         {/* Executive Leadership Showcase */}
