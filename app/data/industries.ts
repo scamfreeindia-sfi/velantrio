@@ -1,4 +1,4 @@
-import { Landmark, ShieldCheck, Home, HeartPulse, Phone, ShoppingBag, Cloud, Scale, Shield, Zap, BarChart, Users } from "lucide-react";
+import { Landmark, ShieldCheck, Home, HeartPulse, Phone, ShoppingBag, Cloud, Scale, Shield, Zap, BarChart, Users, Box } from "lucide-react";
 
 export const industriesData = {
   "banking": {
@@ -151,6 +151,25 @@ export const industriesData = {
       "Legal Transcription",
       "Case Management Support",
       "Compliance Reporting"
+    ]
+  },
+  "logistics": {
+    title: "Logistics",
+    slug: "logistics",
+    icon: Box,
+    description: "Streamlined logistics and supply chain operations, from order processing to tracking and delivery.",
+    fullDescription: "The logistics industry demands speed and precision. We help logistics providers streamline their back-office operations, from order processing to tracking and delivery.",
+    benefits: [
+      { icon: Zap, title: "Faster Delivery", desc: "Reduced turnaround times for order processing and delivery." },
+      { icon: Shield, title: "Quality Control", desc: "Meticulous data verification to minimize errors." },
+      { icon: Users, title: "Better CX", desc: "Responsive customer support and inquiry resolution." }
+    ],
+    services: [
+      "Order Processing",
+      "Shipment Tracking",
+      "Customer Support",
+      "Data Verification",
+      "Document Digitization"
     ]
   }
 };

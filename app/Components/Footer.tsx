@@ -115,7 +115,6 @@ export function Footer() {
                 { name: "Target Industries", href: "/industries" },
                 { name: "Executive Leadership", href: "/about" },
                 { name: "Careers & Openings", href: "/careers" },
-                { name: "Partner Program", href: "/partner" },
                 { name: "Contact Delivery Hub", href: "/contact" }
               ]}
             />
