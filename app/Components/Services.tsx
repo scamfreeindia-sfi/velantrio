@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import {
   Phone,
@@ -23,14 +24,16 @@ import { SectionHeader } from "./SectionHeader";
 
 const specializedServices = [
   {
+    id: "kpo-research",
     icon: BarChart3,
-    title: "KPO & Financial Research",
+    title: "KPO & Market Research",
     category: "Knowledge Services",
     sla: "Analyst-Grade Output",
-    desc: "Rigorous financial modeling, quantitative data aggregation, competitor intelligence, and specialized industry briefs.",
-    points: ["Secondary market research", "Financial spreading & modeling", "Regulatory compliance tracking"],
+    desc: "Rigorous financial modeling, quantitative data aggregation, market research, competitor intelligence, and specialized industry briefs.",
+    points: ["Secondary market research & intelligence", "Financial spreading & quantitative modeling", "Regulatory compliance tracking"],
   },
   {
+    id: "voice-bpo",
     icon: Phone,
     title: "Inbound & Outbound Voice BPO",
     category: "Customer Operations",
@@ -39,14 +42,16 @@ const specializedServices = [
     points: ["Native fluency across global accents", "Omnichannel CRM integration", "100% call recording & QA scoring"],
   },
   {
+    id: "non-voice-support",
     icon: MessageSquare,
-    title: "Non-Voice & Omnichannel Support",
+    title: "Non-Voice & Chat Support",
     category: "Customer Operations",
     sla: "< 15 Min First Response",
     desc: "High-speed email, live chat, and ticketing support across Zendesk, Freshdesk, Salesforce, and custom CRM systems.",
     points: ["Multi-tier technical assistance", "High-volume ticket resolution", "Detailed CSAT & SLA metrics"],
   },
   {
+    id: "loan-mortgage",
     icon: Banknote,
     title: "Loan & Mortgage Processing",
     category: "Financial Back Office",
@@ -55,16 +60,18 @@ const specializedServices = [
     points: ["Document classification & OCR review", "Underwriting data preparation", "Strict PCI & financial compliance"],
   },
   {
+    id: "custom-software",
     icon: Code2,
-    title: "Web & Custom Automation Solutions",
+    title: "Custom Software Solutions",
     category: "Technology",
     sla: "Full-Stack Agile",
     desc: "Enterprise web platforms, internal automation workflows, portal dashboards, and API integrations built securely.",
     points: ["PHP Laravel, Node.js, Python & Django DRF", "Full-stack web & REST API development", "Automated data pipelines & enterprise security"],
   },
   {
+    id: "logistics",
     icon: Truck,
-    title: "Logistics",
+    title: "Logistics Support",
     category: "Logistics & Operations",
     sla: "24/7 Tracking & Support",
     desc: "End-to-end freight tracking, dispatch management, bill of lading validation, and inventory back-office support.",
@@ -76,6 +83,18 @@ const specializedServices = [
 ];
 
 export function Services() {
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash) {
+      const id = window.location.hash.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, []);
+
   return (
     <section id="services" className="relative py-12 sm:py-16 lg:py-20 border-b border-border bg-card">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -86,7 +105,7 @@ export function Services() {
         />
 
         {/* Featured Flagship Hero Card: Tele Data Validation */}
-        <div className="mt-14 rounded-2xl border border-primary/30 bg-muted/30 p-6 sm:p-10 shadow-xs">
+        <div id="tele-data-validation" className="mt-14 scroll-mt-28 rounded-2xl border border-primary/30 bg-muted/30 p-6 sm:p-10 shadow-xs">
           <div className="grid lg:grid-cols-12 gap-8 items-center">
 
             {/* Left Info */}
@@ -101,7 +120,7 @@ export function Services() {
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
-                Enterprise BPO, KPO & Data Solutions
+                Enterprise Tele Data Validation & BPO Solutions
               </h3>
 
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -125,7 +144,7 @@ export function Services() {
 
               <div className="pt-4">
                 <Link
-                  href="/services"
+                  href="/contact"
                   className="inline-flex items-center gap-2 rounded-lg bg-primary text-primary-foreground px-5 py-2.5 text-xs sm:text-sm font-semibold hover:bg-primary/90 transition-colors shadow-2xs"
                 >
                   <span>Explore BPO & KPO Solutions</span>
@@ -184,12 +203,13 @@ export function Services() {
           </div>
         </div>
 
-        {/* 5 Specialized Capabilities Grid */}
+        {/* 6 Specialized Capabilities Grid */}
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {specializedServices.map((service) => (
             <div
               key={service.title}
-              className="rounded-2xl border border-border bg-card p-6 sm:p-7 shadow-xs hover:border-primary/40 hover:shadow-md transition-all duration-200 flex flex-col justify-between"
+              id={service.id}
+              className="scroll-mt-28 rounded-2xl border border-border bg-card p-6 sm:p-7 shadow-xs hover:border-primary/40 hover:shadow-md transition-all duration-200 flex flex-col justify-between"
             >
               <div>
                 {/* Header line with Category & SLA */}

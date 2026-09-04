@@ -92,6 +92,18 @@ export function About() {
     return () => obs.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash) {
+      const id = window.location.hash.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, []);
+
   return (
     <section id="about" className="relative py-12 sm:py-16 lg:py-20 border-b border-border bg-card">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
@@ -171,7 +183,7 @@ export function About() {
         </div>
 
         {/* Executive Leadership Showcase */}
-        <div className="mt-20 sm:mt-24 pt-16 border-t border-border">
+        <div id="leadership" className="mt-20 sm:mt-24 pt-16 scroll-mt-28 border-t border-border">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1 text-xs font-semibold text-foreground/80 shadow-xs mb-3">
               <UserCheck2 className="h-3.5 w-3.5 text-primary" />

@@ -100,12 +100,12 @@ export function Footer() {
             <FooterCol
               title="Specialized Services"
               links={[
-                { name: "Tele Data Validation", href: "/services" },
-                { name: "Voice Operations (BPO)", href: "/services" },
-                { name: "Non-Voice & Chat Support", href: "/services" },
-                { name: "KPO & Market Research", href: "/services" },
-                { name: "Loan & Mortgage Processing", href: "/services" },
-                { name: "Custom Software Solutions", href: "/services" }
+                { name: "Tele Data Validation", href: "/services#tele-data-validation" },
+                { name: "Voice Operations (BPO)", href: "/services#voice-bpo" },
+                { name: "Non-Voice & Chat Support", href: "/services#non-voice-support" },
+                { name: "KPO & Market Research", href: "/services#kpo-research" },
+                { name: "Loan & Mortgage Processing", href: "/services#loan-mortgage" },
+                { name: "Custom Software Solutions", href: "/services#custom-software" }
               ]}
             />
             <FooterCol
@@ -113,7 +113,7 @@ export function Footer() {
               links={[
                 { name: "About Velantrio", href: "/about" },
                 { name: "Target Industries", href: "/industries" },
-                { name: "Executive Leadership", href: "/about" },
+                { name: "Executive Leadership", href: "/about#leadership" },
                 { name: "Careers & Openings", href: "/careers" },
                 { name: "Contact Delivery Hub", href: "/contact" }
               ]}
